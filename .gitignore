@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local credentials. Public config files read from environment variables.
+.env
+conf/*_local.py
+
+# Raw/licensed data and expensive cached rank panels are intentionally omitted.
+data/
+result/*.pkl
+result/metadata/
+result/ablations/
+
+# LaTeX build products.
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Local scratch.
+artifact_backups/
+.figure_review/

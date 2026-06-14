@@ -1,0 +1,20 @@
+\section{Input Ablation Study}
+\label{app:input-ablation}
+
+Table~\ref{tab:input-ablation-appendix} reports an input ablation that re-runs each model--objective pair with fundamentals only, market summaries only, or both information sources.
+From a factor-prior perspective, the ablation asks which information channel sustains alpha and factor loadings rather than which channel maximizes raw CAGR alone.
+The appendix table reports the measured ablation panel: full-input and ablated-input results are available for all 11 included models and all three objectives.
+The performance results show that market-only prompts often retain substantial ranking power, especially for stronger frontier models, while fundamentals-only prompts are generally weaker but not uniformly uninformative.
+The factor-loading extension in Appendix~\ref{app:ablation-factor} shows that this performance gap is mirrored in FF6 loadings and style fingerprints: market summaries preserve the growth--momentum factor-like prior, whereas fundamentals-only inputs sharply reduce alpha and make style fingerprints less economically coherent.
+
+\input{tables/input_ablation_appendix_table.tex}
+
+To formally compare information sets, Table~\ref{tab:input-ablation-tests} tests paired differences between the full input and each ablated input.
+Each observation is a matched model--objective cell, and the test flips the sign of all three objectives within each model cluster, preserving within-model dependence while testing whether the average paired difference is zero.
+The full input is not significantly different from market-only prompts on long--short CAGR, Sharpe, or mean IC, indicating that the market summary block carries most of the measured ranking signal in this sample.
+By contrast, the full input significantly improves long--short CAGR and mean IC relative to fundamentals-only prompts, with a positive but less precisely estimated Sharpe difference.
+
+\input{tables/input_ablation_hypothesis_tests.tex}
+
+% ──────────────────────────────────────────────────────────────
+\clearpage

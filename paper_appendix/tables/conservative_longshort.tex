@@ -1,0 +1,31 @@
+\begin{table*}[t]
+\centering
+\caption{Conservative-window Q1$-$Q5 long--short performance and rank IC, net of 40\,bps one-way costs on both legs. Bold indicates the best value in each column.}
+\label{tab:longshort}
+\scriptsize
+\setlength{\tabcolsep}{1.6pt}
+\renewcommand{\arraystretch}{0.95}
+\resizebox{0.98\textwidth}{!}{
+\begin{tabular}{l rrrrr rrrrr rrrrr}
+\toprule
+& \multicolumn{5}{c}{\textbf{Exp.\ Return}} & \multicolumn{5}{c}{\textbf{Sharpe}} & \multicolumn{5}{c}{\textbf{Sortino}}  \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-11} \cmidrule(lr){12-16}
+\textbf{Ranker} & CAGR & Shp & Sort & MDD & IC & CAGR & Shp & Sort & MDD & IC & CAGR & Shp & Sort & MDD & IC  \\
+\midrule
+GPT-4o & $-$22.7 & $-$0.62 & $-$0.83 & $-$57.3 & 0.090 & $-$70.3 & $-$3.31 & $-$3.89 & $-$86.0 & $-$0.264 & $-$69.8 & $-$3.31 & $-$3.92 & $-$85.7 & $-$0.281 \\
+GPT-4o mini & $-$63.1 & $-$4.02 & $-$4.70 & $-$77.0 & $-$0.303 & $-$52.7 & $-$2.92 & $-$3.63 & $-$66.1 & $-$0.241 & $-$55.7 & $-$3.15 & $-$3.86 & $-$69.6 & $-$0.255 \\
+GPT-4.1 & 367.6 & 4.72 & 8.37 & $-$11.8 & 0.549 & 342.7 & 4.85 & 9.29 & $-$11.3 & 0.540 & 372.1 & 4.90 & 9.30 & $-$10.8 & 0.510 \\
+GPT-4.1 mini & 260.3 & 4.09 & 7.64 & $-$15.9 & 0.449 & 314.0 & 4.82 & 8.96 & $-$8.5 & 0.498 & 81.2 & 2.41 & 4.06 & $-$15.7 & 0.306 \\
+GPT-4.1 nano & 100.4 & 2.82 & 4.63 & $-$8.8 & 0.294 & 88.2 & 2.75 & 4.56 & $-$11.6 & 0.300 & 42.1 & 1.80 & 2.71 & $-$8.9 & 0.230 \\
+o4-mini & 333.0 & 4.65 & 8.39 & $-$11.4 & 0.529 & 258.7 & 4.48 & 7.75 & $-$8.5 & 0.524 & 258.7 & 4.48 & 7.75 & $-$8.5 & 0.526 \\
+o3 & \textbf{466.0} & \textbf{5.54} & \textbf{10.70} & \textbf{$-$8.7} & \textbf{0.594} & 258.7 & 4.48 & 7.75 & $-$8.5 & 0.526 & 274.1 & 4.61 & 8.07 & $-$8.5 & 0.561 \\
+\midrule
+Gem. 2.5 Flash & 380.7 & 4.79 & 8.81 & $-$14.1 & 0.513 & 298.5 & 4.64 & 8.40 & $-$7.7 & 0.509 & 356.7 & 5.22 & 10.65 & $-$7.1 & 0.482 \\
+Gem. 2.5 Pro & 458.8 & 4.99 & 9.15 & $-$11.4 & 0.577 & 270.2 & 4.55 & 8.37 & $-$6.4 & 0.511 & 329.1 & \textbf{5.86} & \textbf{12.38} & \textbf{$-$4.9} & 0.569 \\
+\midrule
+Cl. Sonnet 4 & 231.9 & 3.99 & 7.24 & $-$9.9 & 0.534 & \textbf{389.3} & \textbf{5.78} & \textbf{11.80} & \textbf{$-$6.0} & \textbf{0.588} & 113.5 & 2.91 & 4.77 & $-$14.8 & 0.539 \\
+Cl. Opus 4 & 312.9 & 4.56 & 8.20 & $-$13.0 & 0.483 & $-$1.6 & 0.06 & 0.09 & $-$33.7 & 0.283 & \textbf{444.9} & 5.74 & 11.63 & $-$6.0 & \textbf{0.749} \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

@@ -1,0 +1,42 @@
+\begin{table}[!t]
+\centering
+\caption{Input ablation diagnostics under conservative model windows. CAGR and IC are reported in percent; Panel C stars use Newey--West HAC SE: $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.}
+\label{tab:input-ablation-main}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{llrlll}
+\toprule
+\multicolumn{6}{l}{\textbf{Panel A: Expected-return performance}}  \\
+\textbf{Input} & & \textbf{Mean LS CAGR} & \textbf{Mean LS Shp} & \textbf{Mean IC} & \textbf{N}  \\
+\midrule
+Fund. + Market & & 256.9 & 3.23 & 39.2 & 11 \\
+Market only & & 313.8 & 3.38 & 48.7 & 9 \\
+Fund. only & & 47.6 & 1.32 & 11.4 & 9 \\
+\midrule
+\multicolumn{6}{l}{\textbf{Panel B: Paired tests}}  \\
+\textbf{Comparison} & \textbf{Metric} & \textbf{Both} & \textbf{Ablated} & \textbf{$\Delta$} & \textbf{$p$}  \\
+\midrule
+Both - Market & LS CAGR & 218.2 & 294.3 & $-$76.1 & 0.154 \\
+Both - Market & LS Shp & 2.68 & 3.21 & $-$0.53 & 0.478 \\
+Both - Market & IC & 33.4 & 43.5 & $-$10.1 & 0.154 \\
+Both - Fund. & LS CAGR & 218.2 & 20.4 & 197.8 & 0.021 \\
+Both - Fund. & LS Shp & 2.68 & 0.53 & 2.15 & 0.096 \\
+Both - Fund. & IC & 34.1 & 7.4 & 26.7 & 0.053 \\
+\midrule
+\multicolumn{6}{l}{\textbf{Panel C: Representative FF6 loadings}}  \\
+\textbf{Model} & \textbf{Input} & $\alpha$ & $\beta_{\text{HML}}$ & $\beta_{\text{CMA}}$ & $\beta_{\text{MOM}}$  \\
+\midrule
+o3 & Fund. + Market & 350.8 & $-$0.29 & $-$0.22 & 0.25 \\
+o3 & Market only & 317.4 & $-$0.19 & $-$0.28 & 0.46$^{**}$ \\
+o3 & Fund. only & 84.6 & $-$0.50$^{**}$ & $-$0.40 & 0.31 \\
+Gem. 2.5 Pro & Fund. + Market & 340.2 & $-$0.27 & $-$0.40 & 0.51 \\
+Gem. 2.5 Pro & Market only & 414.2 & $-$0.62 & 0.50 & 0.47 \\
+Gem. 2.5 Pro & Fund. only & 76.2 & $-$0.27 & $-$0.69 & 0.38 \\
+Cl. Opus 4 & Fund. + Market & 261.0 & 0.22 & $-$1.39$^{**}$ & 0.12 \\
+Cl. Opus 4 & Market only & 555.9 & $-$0.20 & $-$0.45 & 0.13 \\
+Cl. Opus 4 & Fund. only & $-$7.2 & $-$0.21 & $-$1.26$^{***}$ & 0.18 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

@@ -1,0 +1,12 @@
+anthropic
+google-genai
+matplotlib
+numpy
+openai
+pandas
+pandas-datareader
+scikit-learn
+seaborn
+statsmodels
+tiktoken
+tqdm

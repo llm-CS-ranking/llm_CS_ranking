@@ -1,0 +1,21 @@
+\section{Related Work}
+% ══════════════════════════════════════════════════════════════
+
+\textbf{LLM-based equity analysis and portfolio construction.}
+LLMs have been shown to extract financial signals from news and analyst reports \citep{lopez2023chatgpt,kim2023llmanalysts}, financial statements \citep{kim2024llmforecast}, and fundamentals-plus-news data for equity rating \citep{papasotiriou2024ai}, though \citeauthor{papasotiriou2024ai} evaluate only one model and do not backtest investable portfolios.
+Recent systems move toward full stock selection and portfolio construction: MarketSenseAI and its agentic extension use GPT-4 for holistic selection \citep{fatouros2024marketsenseai,fatouros2025marketsenseai2}; TradExpert combines expert LLMs for prediction and ranking \citep{ding2025tradexpert}; FinMem, TradingAgents, FinCon, and MASS introduce memory, debate, manager--analyst, or scaling-simulation agent designs for trading and portfolio management \citep{yu2025finmem,xiao2024tradingagents,yu2024fincon,guo2025mass}; prompt-guided GuruAgents encode investor personas into tool-using LLM agents \citep{kim2025guruagents}; and \citet{lee2025llmbl} integrate LLM views into Black--Litterman and report model-specific ``investment styles.''
+Complementary threads study LLM-enhanced momentum \citep{anic2025chatgpt}, region-specific prediction \citep{tan2024llmchina}, exploratory portfolio selection \citep{xie2024wallstreetneophyte,romanko2023chatgptportfolio}, and decision-focused optimization layers \citep{hwang2025dinn,kim2025dsl}.
+We instead study whether frontier LLMs can act as zero-shot \emph{listwise cross-sectional rankers}---outputting a complete ordering rather than ratings or weights---evaluated via backtesting and factor-analytic diagnostics.
+
+\textbf{Cross-sectional ranking and learning to rank.}
+Framing stock selection as ranking predates LLMs: traditional factor research sorts on human-defined characteristics \citep{fama1993common,jegadeesh1993returns}, and modern ML learns ranking signals from characteristic panels \citep{gu2020empirical,bryzgalova2025forest}.
+An equity-specific L2R literature covers sentiment-driven ListNet/RankNet \citep{song2017ltrsentiment}, Relational Stock Ranking \citep{feng2018temporal}, STHAN-SR hypergraph attention \citep{sawhney2021sthan}, pointwise/pairwise/listwise objectives \citep{poh2021learning,zhang2022listwise}, label design \citep{hwang2023stoploss}, and temporal stock representations \citep{hwang2024simstock}.
+In NLP, LLMs themselves act as zero-shot rankers through RankGPT-style permutation generation and later pairwise, setwise, and listwise prompting \citep{sun2023rankgpt,qin2024pairwise,zhuang2024setwise,ren2025selfcalibrated}.
+Our contribution is to elicit full listwise cross-sectional rankings \emph{zero-shot} from frontier LLMs without any task-specific financial training.
+
+\textbf{Factor generation, multi-agent systems, and recommendation.}
+LLMs have also been used to generate predictive factors, mine decay-resistant alphas, and automate quant factor--model R\&D \citep{cheng2024chatgptfactor,tang2025alphaagent,li2025rdagent}, coordinate financial decisions via multi-agent systems \citep{lyu2025alphaagents,cheng2024aapm,yang2024finrobot}, and query financial databases through constrained function-calling interfaces \citep{kim2025finaidata}; see \citet{nie2024surveylargelanguagemodels} for a survey.
+Our factor analysis (Section~\ref{sec:factor}) treats LLM rankings themselves as implicit factors and tests their spanning by classical risk premia.
+A related but distinct literature on \emph{personalized} asset recommendation \citep{chung2025mvecf,lee2024pfotgnrec,sanzcruzado2024fartrans,sakurai2026rura} targets user-specific utility; our study instead asks how LLM rankings behave as cross-sectional asset-pricing operators on a fixed investable universe.
+
+% ══════════════════════════════════════════════════════════════

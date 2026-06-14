@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\caption{Non-LLM baseline performance on the same SRLLM information set. CAGR and IC are reported in percent.}
+\label{tab:nonllm-baselines}
+\small
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Baseline & Q1 CAGR & Q1 Shp & LS CAGR & LS Shp & LS Sortino & IC & ICIR & Months \\
+\midrule
+RandomForest & 43.7 & 1.45 & 19.6 & 1.01 & 1.47 & 17.2 & 3.77 & 28 \\
+Ridge & 43.8 & 1.36 & 24.4 & 0.98 & 1.45 & 13.5 & 1.81 & 28 \\
+Mom12-1 & 58.4 & 1.57 & 18.8 & 0.74 & 1.08 & 3.8 & 0.43 & 32 \\
+QualityROE & 29.6 & 1.43 & -9.8 & -0.42 & -0.57 & -0.5 & -0.09 & 32 \\
+Reversal1M & 18.5 & 0.81 & -26.3 & -0.98 & -1.32 & -4.2 & -0.61 & 32 \\
+ValueEP & 33.5 & 1.52 & -29.5 & -0.99 & -1.35 & -4.1 & -0.53 & 32 \\
+ConservativeInv & 20.7 & 0.95 & -26.4 & -1.06 & -1.45 & -7.8 & -1.09 & 32 \\
+LowVol60D & 4.8 & 0.42 & -46.8 & -1.53 & -2.05 & -13.7 & -1.49 & 32 \\
+Composite6 & 16.1 & 0.97 & -46.3 & -1.90 & -2.44 & -8.8 & -1.18 & 32 \\
+\bottomrule
+\end{tabular}
+\end{table}

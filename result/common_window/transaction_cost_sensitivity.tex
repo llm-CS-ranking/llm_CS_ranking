@@ -1,0 +1,29 @@
+\begin{table}[H]
+\centering
+\caption{Common-window transaction-cost sensitivity for all expected-return rankers. The long--short portfolio subtracts one-way costs on both long and short turnover; bold indicates the best Sharpe at each cost level.}
+\label{tab:cost-sensitivity}
+\scriptsize
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Ranker} & \textbf{Avg LS Turn} & \textbf{0 bps} & \textbf{20 bps} & \textbf{40 bps} & \textbf{100 bps} \\
+\midrule
+Random Forest & 2.43 & 1.88 & 1.64 & 1.40 & 0.66 \\
+Ridge & 1.61 & 1.69 & 1.54 & 1.39 & 0.94 \\
+12--1 Momentum & 1.05 & 0.97 & 0.88 & 0.79 & 0.52 \\
+ROE Quality & 0.29 & -0.52 & -0.57 & -0.62 & -0.76 \\
+Value (E/P) & 0.20 & -1.17 & -1.19 & -1.22 & -1.28 \\
+Composite & 1.42 & -2.11 & -2.20 & -2.29 & -2.56 \\
+Claude Sonnet 4 & 2.15 & 3.60 & 3.46 & 3.31 & 2.82 \\
+Claude Opus 4 & 2.38 & \textbf{3.88} & \textbf{3.72} & \textbf{3.55} & \textbf{3.01} \\
+Gemini 2.5 Flash & 2.20 & 3.35 & 3.22 & 3.07 & 2.61 \\
+Gemini 2.5 Pro & 1.80 & 3.05 & 2.93 & 2.81 & 2.44 \\
+GPT-4o & 2.83 & -0.79 & -0.98 & -1.17 & -1.69 \\
+GPT-4o mini & 2.16 & -3.77 & -3.97 & -4.16 & -4.61 \\
+GPT-4.1 & 2.07 & 2.21 & 2.08 & 1.94 & 1.52 \\
+GPT-4.1 mini & 2.94 & 2.67 & 2.47 & 2.27 & 1.66 \\
+GPT-4.1 nano & 2.44 & 1.22 & 1.02 & 0.83 & 0.24 \\
+o4-mini & 2.19 & 1.63 & 1.49 & 1.34 & 0.90 \\
+o3 & 1.88 & 2.76 & 2.64 & 2.52 & 2.14 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,72 @@
+\section{Methodology}
+% ══════════════════════════════════════════════════════════════
+
+\subsection{Listwise Ranking Formulation}
+
+Among pointwise, pairwise, setwise, and listwise L2R paradigms \citep{qin2024pairwise,zhuang2024setwise,ren2025selfcalibrated}, we adopt the \emph{listwise} approach: the LLM receives data for all $n$ stocks simultaneously and returns a single permutation, avoiding the $\binom{n}{2}$ cost of pairwise calls and the coarseness of classification.
+Rankings preserve the relative information needed for portfolio construction while discarding the magnitude noise that dominates raw return prediction \citep{gu2020empirical}, and any classification or regression output can be converted to a ranking but not vice versa.
+
+\subsection{Universe and Data}
+
+Our universe is the 30 largest NASDAQ-100 constituents by market cap (NVDA, AAPL, MSFT, GOOG, AMZN, META, TSLA, and 23 others)---a fixed, concentrated evaluation panel that is tractable within a single prompt while still supporting cross-sectional ranking.
+This is a benchmark panel, not a survivorship-free investable universe: fixing the cross-section isolates model-ranking behavior and prompt scalability, while Section~\ref{sec:limitations} treats broader rolling universes as a necessary extension.
+Each stock-month is described by two JSON blocks:
+\textbf{Fundamentals}---up to 40 S\&P Capital IQ items (revenue, net income, EPS, total assets, operating cash flow, etc.) with their four most recent quarterly values; and
+\textbf{Market summary}---nine fields covering 1m/3m returns, 1m/3m annualized volatility, 20d/60d MA gaps, average volume, volume z-score, and drawdown from high.
+All inputs are point-in-time: only information available before the first day of the prediction month is included.
+
+\subsection{Listwise Ranking Protocol}
+
+For each month $t$, prediction mode $m \in \{\text{return}, \text{Sharpe}, \text{Sortino}\}$, and model $\mathcal{M}$, we (1) build a JSON payload with the fundamentals and market summary for all $n=30$ stocks as of $t$, (2) prompt $\mathcal{M}$ with a system instruction---\emph{``Rank the following stock tickers by their expected [return / Sharpe / Sortino] over the next rebalancing period. Use ascending order (1 = highest). Return JSON only.''}---and (3) parse the JSON response into a ranking $r_{i,t} \in \{1, \ldots, n\}$.
+All API calls use temperature $=0$ for reproducibility, and malformed JSON responses are discarded rather than repaired by hand.
+This design makes the benchmark intentionally austere: differences across models arise from the same point-in-time data, the same listwise prompt, and the same deterministic decoding protocol.
+The user payload is enclosed in \texttt{<DATA\_JSON>} tags and contains three keys: \texttt{fundamentals}, \texttt{market}, and \texttt{notes}.
+The market block includes recent return, volatility, moving-average gap, volume, and drawdown summaries; the notes block records the as-of month and quarter ordering.
+
+\subsection{Models}
+
+We evaluate 11 frontier LLMs from three vendors---OpenAI (GPT-4o/4o mini/4.1/4.1 mini/4.1 nano, o3, o4-mini), Google (Gemini 2.5 Flash/Pro), and Anthropic (Claude Sonnet 4, Opus 4)---spanning multiple generations and a wide cost range.
+For the asset-pricing narrative we highlight one representative model per vendor family---o3, Gemini 2.5 Pro, and Claude Opus 4---while retaining the full 11-model benchmark in the tables.
+Every prompt contains only point-in-time data available at the as-of date, reducing input-level lookahead; however, for backtesting we do \emph{not} rely solely on the official model-documentation ``knowledge cutoff'' date.
+Instead, the admissible boundary is the latest model release or documented update date available at backtest time whenever that is later than the static knowledge cutoff, and we include only full calendar months after that boundary.
+Expected return is the primary objective throughout; Sharpe and Sortino prompts are reported as robustness checks on risk-adjusted wording.
+
+\subsection{Backtest Design and Metrics}
+
+Each monthly ranking is converted into equal-weighted quintile portfolios: \textbf{Q1} (stocks ranked 1--6), \textbf{Q5} (ranked 25--30), and a dollar-neutral long--short \textbf{Q1$-$Q5}.
+Portfolios are rebalanced on the third trading day of each month (lag = 2 days) with a one-way transaction cost of 40\,bps on turnover.
+We compare against equal-weighted (\textbf{UNIV\_EW}) and cap-weighted (\textbf{UNIV\_CAPW}) benchmarks over the same universe.
+As non-LLM ranker controls, we also evaluate single-characteristic factor sorts (12--1 momentum, 1-month reversal, 60-day low volatility, earnings yield, ROE, and conservative investment), an equal-weighted composite factor ranker, and expanding-window Ridge/Random-Forest return rankers trained only on prior months.
+All portfolio metrics---CAGR, annualized volatility, Sharpe, Sortino, maximum drawdown (MDD), Calmar, and hit ratio---are computed from daily returns and annualized where applicable to enable comparability across different backtest lengths.
+To measure ranking quality directly we compute the Spearman Rank IC between the predicted ranking and the realized return ranking over the same monthly holding period, together with its annualized information ratio $\text{ICIR} = \bar{\text{IC}}/\sigma_{\text{IC}} \times \sqrt{12}$.
+Because parsed evaluation coverage differs across models and recent model windows can be short, we do not treat annualized CAGR as a standalone acceptance criterion.
+Instead, a ranking is credible only when portfolio separation, rank IC, FF6 spanning tests, same-window controls, and within-vendor generation comparisons point in the same direction.
+Table~\ref{tab:model-costs} summarizes the tested model set, conservative boundary used for filtering, first admissible evaluation month, and approximate per-experiment API cost, making the cost--performance comparisons in RQ3 auditable.
+
+\begin{table}[t]
+\centering
+\caption{Model coverage, conservative evaluation starts, and approximate monthly experiment costs.}
+\label{tab:model-costs}
+\scriptsize
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{llccc}
+\toprule
+\textbf{Model} & \textbf{Vendor} & \textbf{Boundary} & \textbf{Start} & \textbf{Cost} \\
+\midrule
+GPT-4o & OpenAI & 2024-05 & 2024-06 & \$1.03 \\
+GPT-4o mini & OpenAI & 2024-07 & 2024-08 & \$1.03 \\
+GPT-4.1 & OpenAI & 2025-04 & 2025-05 & \$1.23 \\
+GPT-4.1 mini & OpenAI & 2025-04 & 2025-05 & \$0.33 \\
+GPT-4.1 nano & OpenAI & 2025-04 & 2025-05 & \$0.04 \\
+o4-mini & OpenAI & 2025-04 & 2025-05 & \$0.55 \\
+o3 & OpenAI & 2025-04 & 2025-05 & \$0.93 \\
+Gemini 2.5 Flash & Google & 2025-06 & 2025-07 & \$0.14 \\
+Gemini 2.5 Pro & Google & 2025-06 & 2025-07 & \$0.59 \\
+Claude Sonnet 4 & Anthropic & 2025-05 & 2025-06 & \$1.28 \\
+Claude Opus 4 & Anthropic & 2025-05 & 2025-06 & \$6.38 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+% ══════════════════════════════════════════════════════════════

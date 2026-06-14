@@ -1,0 +1,26 @@
+\begin{table}[H]
+\centering
+\caption{Within-universe style fingerprint under input ablations. Values are average Q1$-$Q5 normalized characteristic ranks; stars test the monthly mean spread with Newey--West HAC SE: $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.}
+\label{tab:ablation-char}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ll llllll}
+\toprule
+\textbf{Model} & \textbf{Input} & Mom & Rev & LowVol & E/P & ROE & LowInv \\
+\midrule
+o3 & Fund. + Market & +0.04 & \multicolumn{1}{l}{-0.21$^{*}$} & \multicolumn{1}{l}{-0.57$^{***}$} & \multicolumn{1}{l}{-0.21$^{***}$} & \multicolumn{1}{l}{-0.05$^{***}$} & \multicolumn{1}{l}{-0.10$^{***}$} \\
+o3 & Market only & \multicolumn{1}{l}{+0.17$^{**}$} & \multicolumn{1}{l}{-0.23$^{**}$} & \multicolumn{1}{l}{-0.48$^{***}$} & \multicolumn{1}{l}{-0.33$^{***}$} & \multicolumn{1}{l}{-0.15$^{***}$} & \multicolumn{1}{l}{-0.20$^{***}$} \\
+o3 & Fund. only & +0.15 & -0.13 & \multicolumn{1}{l}{-0.47$^{***}$} & \multicolumn{1}{l}{-0.37$^{***}$} & \multicolumn{1}{l}{-0.06$^{**}$} & \multicolumn{1}{l}{-0.21$^{***}$} \\
+\midrule
+Gem. 2.5 Pro & Fund. + Market & \multicolumn{1}{l}{+0.24$^{***}$} & \multicolumn{1}{l}{-0.22$^{**}$} & \multicolumn{1}{l}{-0.52$^{***}$} & \multicolumn{1}{l}{-0.41$^{***}$} & \multicolumn{1}{l}{-0.29$^{***}$} & \multicolumn{1}{l}{-0.12$^{**}$} \\
+Gem. 2.5 Pro & Market only & \multicolumn{1}{l}{+0.23$^{**}$} & -0.10 & \multicolumn{1}{l}{-0.38$^{***}$} & \multicolumn{1}{l}{-0.30$^{**}$} & \multicolumn{1}{l}{-0.05$^{**}$} & \multicolumn{1}{l}{-0.15$^{***}$} \\
+Gem. 2.5 Pro & Fund. only & +0.21 & -0.04 & \multicolumn{1}{l}{-0.37$^{***}$} & \multicolumn{1}{l}{-0.43$^{***}$} & +0.01 & \multicolumn{1}{l}{-0.23$^{***}$} \\
+\midrule
+Cl. Opus 4 & Fund. + Market & \multicolumn{1}{l}{+0.32$^{***}$} & \multicolumn{1}{l}{-0.16$^{***}$} & \multicolumn{1}{l}{-0.35$^{***}$} & \multicolumn{1}{l}{-0.31$^{***}$} & \multicolumn{1}{l}{-0.13$^{*}$} & \multicolumn{1}{l}{-0.23$^{***}$} \\
+Cl. Opus 4 & Market only & \multicolumn{1}{l}{+0.23$^{**}$} & \multicolumn{1}{l}{-0.13$^{*}$} & \multicolumn{1}{l}{-0.43$^{***}$} & \multicolumn{1}{l}{-0.36$^{***}$} & \multicolumn{1}{l}{-0.04$^{**}$} & \multicolumn{1}{l}{-0.15$^{***}$} \\
+Cl. Opus 4 & Fund. only & \multicolumn{1}{l}{+0.40$^{***}$} & \multicolumn{1}{l}{-0.11$^{**}$} & \multicolumn{1}{l}{-0.38$^{***}$} & \multicolumn{1}{l}{-0.46$^{***}$} & \multicolumn{1}{l}{+0.10$^{**}$} & \multicolumn{1}{l}{-0.32$^{***}$} \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

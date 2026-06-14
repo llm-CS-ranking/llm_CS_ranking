@@ -1,0 +1,26 @@
+\begin{table}[H]
+\centering
+\caption{FF6 factor loadings of representative Q1$-$Q5 portfolios under input ablations. $\alpha$ is annualized percent; stars use Newey--West HAC SE.}
+\label{tab:ablation-ff6}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{llrllllllr}
+\toprule
+\textbf{Model} & \textbf{Input} & $\alpha$ & $\beta_{\text{MKT}}$ & $\beta_{\text{SMB}}$ & $\beta_{\text{HML}}$ & $\beta_{\text{RMW}}$ & $\beta_{\text{CMA}}$ & $\beta_{\text{MOM}}$ & $R^2_{\text{adj}}$ \\
+\midrule
+o3 & Fund. + Market & 127.7 & +0.86$^{***}$ & -0.06 & -0.70$^{***}$ & -0.60$^{**}$ & +0.28 & +0.34$^{**}$ & 0.45 \\
+o3 & Market only & 156.5 & +0.76$^{***}$ & +0.20 & -0.81$^{***}$ & -0.36 & +0.38 & +0.68$^{***}$ & 0.48 \\
+o3 & Fund. only & 39.7 & +0.68$^{***}$ & +0.05 & -0.82$^{***}$ & -0.36 & +0.24 & +0.67$^{***}$ & 0.44 \\
+\midrule
+Gem. 2.5 Pro & Fund. + Market & 87.6 & +0.83$^{***}$ & -0.06 & -0.64$^{***}$ & -0.75$^{***}$ & +0.40 & +0.51$^{***}$ & 0.38 \\
+Gem. 2.5 Pro & Market only & 116.8 & +1.02$^{***}$ & -0.43 & -0.86$^{***}$ & -0.43 & +0.85$^{***}$ & +0.32 & 0.42 \\
+Gem. 2.5 Pro & Fund. only & 24.9 & +0.50$^{***}$ & -0.00 & -0.97$^{***}$ & -0.30 & +0.48$^{**}$ & +0.66$^{***}$ & 0.44 \\
+\midrule
+Cl. Opus 4 & Fund. + Market & 129.6 & +0.68$^{***}$ & -0.06 & -0.18 & -0.42 & -0.06 & +0.59$^{***}$ & 0.26 \\
+Cl. Opus 4 & Market only & 143.6 & +0.58$^{***}$ & +0.16 & -0.78$^{***}$ & -0.44$^{*}$ & +0.97$^{***}$ & +0.79$^{***}$ & 0.44 \\
+Cl. Opus 4 & Fund. only & 12.2 & +0.55$^{***}$ & -0.07 & -0.96$^{***}$ & -0.32$^{*}$ & +0.26 & +0.76$^{***}$ & 0.56 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

@@ -1,0 +1,134 @@
+%% ICAIF '26 (ACM International Conference on AI in Finance) submission
+%% Uses the ACM `acmart` document class with the `sigconf` (two-column) option.
+%% For double-blind review, add the `anonymous` option:
+%%     \documentclass[sigconf, anonymous, authoryear]{acmart}
+\documentclass[sigconf, anonymous, authoryear, nonacm]{acmart}
+
+% ── Additional packages ──
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{dblfloatfix}        % allow [!b] for figure*/table* — fixes wide floats getting deferred
+\usepackage{placeins}           % provides \FloatBarrier without redefining \section
+\usepackage{balance}            % \balance for balancing the last page of two-column references
+
+\captionsetup{font=small,labelfont=bf,skip=2pt}
+\setlength{\textfloatsep}{6pt plus 1pt minus 2pt}
+\setlength{\floatsep}{5pt plus 1pt minus 1pt}
+\setlength{\intextsep}{5pt plus 1pt minus 1pt}
+\setlength{\dbltextfloatsep}{7pt plus 1pt minus 2pt}
+\setlength{\dblfloatsep}{5pt plus 1pt minus 1pt}
+
+% More aggressive float placement parameters: allow more figures per page,
+% reduce minimum text-per-page so wide figures can flow more freely with the body.
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.7}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.6}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\dblfloatpagefraction}{0.6}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\setcounter{dbltopnumber}{3}
+
+\setlist{nosep, leftmargin=1.2em}
+
+% ── ACM / ICAIF conference metadata ──
+\setcopyright{acmlicensed}
+\copyrightyear{2026}
+\acmYear{2026}
+\acmConference[ICAIF '26]{6th ACM International Conference on AI in Finance}{November 14--17, 2026}{Milan, Italy}
+\acmBooktitle{Proceedings of the 6th ACM International Conference on AI in Finance (ICAIF '26), November 14--17, 2026, Milan, Italy}
+\acmISBN{}
+\acmDOI{}
+
+% ── Citation style ──
+% acmart loads natbib via the `authoryear` option, so \citet and \citep work as in the original draft.
+% The bibliography is provided manually via \begin{thebibliography} below.
+
+% ── Title and authors ──
+\title{LLM Cross-Sectional Rankings as Implicit Factor Models}
+
+\author{Anonymous Authors}
+\affiliation{%
+  \institution{Anonymous Institution}
+  \country{}
+}
+
+% ── Short author list for running heads ──
+\renewcommand{\shortauthors}{Anonymous Authors}
+
+\begin{document}
+
+% ══════════════════════════════════════════════════════════════
+% ABSTRACT
+% ══════════════════════════════════════════════════════════════
+\begin{abstract}
+Can frontier LLMs be evaluated as factor-like cross-sectional rankers rather than as point forecasters?
+We study 11 included LLMs from OpenAI, Google, and Anthropic on 30 NASDAQ-100 constituents using a controlled listwise ranking protocol, with expected return as the primary objective and Sharpe/Sortino prompts as robustness checks.
+Each monthly ranking is converted into quintile portfolios and evaluated with rank IC, FF6 spanning regressions, within-universe style fingerprints, common-window checks, and transaction costs.
+We find that (i) model choice materially changes the induced factor profile: in the conservative window, o3 reaches a long--short Sharpe of 5.54 and IC of 0.59, while GPT-4o variants produce weak or negative spreads;
+(ii) the strongest LLM portfolios in this benchmark carry large FF6 alphas with positive momentum and negative value/profitability/investment loadings, consistent with a growth--momentum implicit prior;
+and (iii) input ablations show that market summaries reproduce most of the full-input factor profile, whereas fundamentals-only prompts weaken both alpha and style coherence.
+The evidence is a controlled model-comparison benchmark rather than a production trading claim: choosing an LLM changes the implicit factor exposure being tested.
+\end{abstract}
+
+% ── ACM CCS concepts and keywords ──
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10010147.10010257.10010258.10010260</concept_id>
+       <concept_desc>Computing methodologies~Learning to rank</concept_desc>
+       <concept_significance>500</concept_significance>
+   </concept>
+   <concept>
+       <concept_id>10010147.10010178.10010179.10010182</concept_id>
+       <concept_desc>Computing methodologies~Natural language generation</concept_desc>
+       <concept_significance>300</concept_significance>
+   </concept>
+   <concept>
+       <concept_id>10003120.10003121.10003123</concept_id>
+       <concept_desc>Applied computing~Economics</concept_desc>
+       <concept_significance>500</concept_significance>
+   </concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Computing methodologies~Learning to rank}
+\ccsdesc[300]{Computing methodologies~Natural language generation}
+\ccsdesc[500]{Applied computing~Economics}
+
+\keywords{large language models, stock ranking, listwise learning to rank, portfolio construction, factor analysis, quantitative finance}
+
+\begin{teaserfigure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/fig1_diagram.png}
+  \caption{Experimental pipeline for deterministic listwise LLM ranking and portfolio, factor, ablation, and cost diagnostics.}
+  \Description{Flow diagram showing point-in-time fundamentals and market summaries entering a deterministic listwise LLM ranker, producing a stock permutation that is evaluated as quintile portfolios with factor and cost diagnostics.}
+  \label{fig:overview}
+\end{teaserfigure}
+
+\maketitle
+
+% ══════════════════════════════════════════════════════════════
+% Main text
+\input{sections/01_introduction.tex}
+\input{sections/02_related_work.tex}
+\input{sections/03_methodology.tex}
+\input{sections/04_results.tex}
+\input{sections/05_discussion.tex}
+\input{sections/06_conclusion.tex}
+
+% References
+\input{sections/99_references.tex}
+
+\end{document}

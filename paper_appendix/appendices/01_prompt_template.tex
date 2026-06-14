@@ -1,0 +1,71 @@
+\section{Prompt Template}
+\label{app:prompt}
+
+For each prediction month $t$ and mode $m$, we construct a JSON payload containing fundamental and market data, then send the following instruction to the LLM:
+
+\begin{quote}
+\small
+\texttt{Rank the following stock tickers by their expected \{mode\} over the next rebalancing period.
+Base your judgment on reasonable assumptions and available general market knowledge.
+Use ascending order (1 = highest expected performance).}
+
+\texttt{Output exactly one ticker per line in the following format:}\\
+\texttt{1: \{Ticker1\}}\\
+\texttt{2: \{Ticker2\}}\\
+\texttt{3: \{Ticker3\}}\\
+\texttt{...}
+
+\texttt{Return JSON only: [\{"ticker":"...","rank":1\}, ...]}
+\end{quote}
+
+\noindent where \texttt{\{mode\}} is replaced by ``expected return'', ``Sharpe Ratio'', or ``Sortino Ratio'' depending on the prediction objective.
+The user message then contains a compact JSON payload enclosed in \texttt{<DATA\_JSON>} tags. Its top-level keys are:
+(i) \texttt{fundamentals}---one record per stock, containing up to 40 accounting items selected by the absolute magnitude of the most recent quarter's value, with four quarterly observations \texttt{Q1}--\texttt{Q4} (\texttt{Q1} = oldest, \texttt{Q4} = most recent);
+(ii) \texttt{market}---one record per stock with nine recent price/volume summary fields; and
+(iii) \texttt{notes}---metadata indicating quarter ordering and the as-of month.
+The \texttt{market} fields are \texttt{ret\_1m}, \texttt{ret\_3m}, \texttt{vol\_1m}, \texttt{vol\_3m}, \texttt{ma20\_gap}, \texttt{ma60\_gap}, \texttt{avg\_volume}, \texttt{volume\_z}, and \texttt{drawdown\_from\_high}.
+
+\noindent A representative payload fragment is shown below:
+
+\begin{verbatim}
+<DATA_JSON>
+{
+  "fundamentals": [
+    {
+      "MONTH": "2025-01",
+      "TICKER": "NVDA",
+      "items": [
+        {"name": "Revenue", "Q1": 26044, "Q2": 30040, "Q3": 35100, "Q4": 39331},
+        {"name": "Net Income", "Q1": 12358, "Q2": 16599, "Q3": 19309, "Q4": 22091},
+        {"name": "EPS", "Q1": 0.49, "Q2": 0.67, "Q3": 0.78, "Q4": 0.89}
+      ]
+    }
+  ],
+  "market": [
+    {
+      "TICKER": "NVDA",
+      "asof": "2025-01-31",
+      "ret_1m": 0.1241,
+      "ret_3m": 0.3275,
+      "vol_1m": 0.4123,
+      "vol_3m": 0.3886,
+      "ma20_gap": 0.0615,
+      "ma60_gap": 0.1432,
+      "avg_volume": 42351872,
+      "volume_z": 1.2841,
+      "drawdown_from_high": -0.0378
+    }
+  ],
+  "notes": {
+    "q_order": "Q1 oldest, Q4 most recent",
+    "asof_month": "2025-01"
+  }
+}
+</DATA_JSON>
+\end{verbatim}
+
+In the actual experiments this structure is repeated for all 30 stocks in the universe; only the item names and values differ by stock and month.
+All API calls use temperature $= 0$.
+
+% ──────────────────────────────────────────────────────────────
+\clearpage

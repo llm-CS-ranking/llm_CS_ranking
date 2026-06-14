@@ -1,0 +1,3 @@
+claude-haiku-4-5-20251001: Claude API unavailable for this project
+claude-sonnet-4-20250514: Claude API unavailable for this project
+claude-opus-4-20250514: Claude API unavailable for this project

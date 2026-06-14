@@ -1,0 +1,33 @@
+\begin{table}[H]
+\centering
+\caption{Common-calendar-window long--short performance. All rankers are restricted to the same common ranking window with a 2-day execution lag and corrected 40 bps one-way costs on both long and short legs. CAGR and IC are reported in percent; bold indicates the best performance value in each column.}
+\label{tab:common-window}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\resizebox{0.95\textwidth}{!}{
+\begin{tabular}{llrrrrrrrr}
+\toprule
+\textbf{Type} & \textbf{Ranker} & \textbf{LS CAGR} & \textbf{LS Shp} & \textbf{LS Sort} & \textbf{MDD} & \textbf{IC} & \textbf{IC Mo.} & \textbf{Avg N} & \textbf{Avg LS Turn} \\
+\midrule
+Baseline & Random Forest & 34.8 & 1.40 & 2.04 & -19.7 & 17.4 & 15 & 27.0 & 2.43 \\
+Baseline & Ridge & 39.4 & 1.39 & 2.04 & \textbf{-15.9} & 16.1 & 15 & 27.0 & 1.61 \\
+Baseline & 12--1 Momentum & 20.6 & 0.79 & 1.17 & -31.2 & 0.6 & 15 & 29.0 & 1.05 \\
+Baseline & ROE Quality & -13.0 & -0.62 & -0.80 & -23.8 & -2.9 & 15 & 27.0 & 0.29 \\
+Baseline & Value (E/P) & -36.3 & -1.22 & -1.58 & -51.8 & -2.9 & 15 & 27.0 & 0.20 \\
+Baseline & Composite & -58.1 & -2.29 & -2.87 & -68.4 & -11.0 & 15 & 29.0 & 1.42 \\
+\midrule
+LLM & Claude Sonnet 4 & 177.8 & 3.31 & 5.92 & -18.2 & 40.1 & 15 & 22.3 & 2.15 \\
+LLM & Claude Opus 4 & \textbf{215.4} & \textbf{3.55} & \textbf{6.21} & -17.3 & \textbf{41.5} & 15 & 22.7 & 2.38 \\
+LLM & Gemini 2.5 Flash & 165.4 & 3.07 & 5.19 & -21.1 & 34.7 & 15 & 22.1 & 2.20 \\
+LLM & Gemini 2.5 Pro & 164.5 & 2.81 & 4.48 & -24.3 & 27.0 & 15 & 22.0 & 1.80 \\
+LLM & GPT-4o & -36.7 & -1.17 & -1.53 & -57.3 & 2.7 & 15 & 28.7 & 2.83 \\
+LLM & GPT-4o mini & -65.4 & -4.16 & -4.84 & -75.2 & -30.7 & 15 & 25.2 & 2.16 \\
+LLM & GPT-4.1 & 87.0 & 1.94 & 3.02 & -33.3 & 27.1 & 14 & 20.3 & 2.07 \\
+LLM & GPT-4.1 mini & 109.2 & 2.27 & 3.72 & -36.9 & 29.4 & 14 & 18.3 & 2.94 \\
+LLM & GPT-4.1 nano & 21.0 & 0.83 & 1.22 & -26.0 & 16.2 & 14 & 16.3 & 2.44 \\
+LLM & o4-mini & 49.6 & 1.34 & 1.95 & -47.3 & 24.6 & 14 & 20.4 & 2.19 \\
+LLM & o3 & 132.7 & 2.52 & 4.03 & -26.3 & 31.0 & 14 & 20.6 & 1.88 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

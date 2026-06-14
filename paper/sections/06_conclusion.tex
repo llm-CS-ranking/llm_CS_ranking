@@ -1,0 +1,11 @@
+\section{Conclusion}
+% ══════════════════════════════════════════════════════════════
+
+We studied LLMs as implicit factor-like priors for cross-sectional stock ranking, bridging LLM capability evaluation and factor diagnostics.
+The central lesson is that model choice is an asset-pricing choice: switching the LLM changes not only ranking accuracy, but also the growth, momentum, value, profitability, and investment exposures being tested.
+Across 11 included models, expected-return prompting is the primary lens: o3 reaches a 466.0\% net long--short CAGR, Sharpe 5.54, and IC 0.594 after charging both long- and short-leg turnover, while GPT-4o and GPT-4o mini produce weak or negative signals.
+The input ablation shows that market summaries carry most of the pricing signal and factor-profile coherence, whereas fundamentals-only prompts weaken both alpha and style structure.
+For finance benchmarks, the implication is to report ordering quality, investable spread performance, and factor diagnostics together rather than treating an LLM ranking as a black-box forecast.
+Future work should extend to broader rolling universes, live model refreshes, and disclosure-text information axes while preserving the same audit trail from prompt to ranking, portfolio, and factor exposure.
+
+% ══════════════════════════════════════════════════════════════

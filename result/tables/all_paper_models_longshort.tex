@@ -1,0 +1,29 @@
+\begin{table*}[t]
+\centering
+\caption{Long--short (Q1$-$Q5) spread performance for all paper models.}
+\label{tab:longshort-all-paper-models}
+\small
+\resizebox{\textwidth}{!}{
+\begin{tabular}{l rrrr rrrr rrrr}
+\toprule
+& \multicolumn{4}{c}{\textbf{Exp. Return}} & \multicolumn{4}{c}{\textbf{Sharpe}} & \multicolumn{4}{c}{\textbf{Sortino}} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-9} \cmidrule(lr){10-13}
+\textbf{Model} & CAGR & Shp & Sort & MDD & CAGR & Shp & Sort & MDD & CAGR & Shp & Sort & MDD \\
+\midrule
+GPT-4o & -20.6 & -0.58 & -0.77 & -68.0 & -59.2 & -2.60 & -3.18 & -93.7 & -52.3 & -2.25 & -2.81 & -89.9 \\
+GPT-4o mini & -43.2 & -2.30 & -2.97 & -83.9 & -43.3 & -2.30 & -3.01 & -82.2 & -49.3 & -2.84 & -3.57 & -86.7 \\
+GPT-4.1 & 87.0 & 1.94 & 3.02 & -33.3 & 95.9 & 2.12 & 3.31 & -32.5 & 34.8 & 1.02 & 1.49 & -53.4 \\
+GPT-4.1 mini & 109.2 & 2.27 & 3.72 & -36.9 & 138.9 & 2.81 & 4.84 & -18.7 & 71.5 & 1.88 & 3.10 & -28.1 \\
+GPT-4.1 nano & 21.0 & 0.83 & 1.22 & -26.0 & 8.0 & 0.42 & 0.57 & -30.6 & -9.5 & -0.24 & -0.31 & -36.6 \\
+o4-mini & 49.6 & 1.34 & 1.95 & -47.3 & 30.3 & 0.89 & 1.25 & -44.4 & 39.2 & 1.06 & 1.46 & -44.2 \\
+o3 & 132.7 & 2.52 & 4.03 & -26.3 & 81.1 & 2.01 & 3.04 & -26.5 & 46.4 & 1.26 & 1.76 & -37.2 \\
+\midrule
+Gemini 2.5 Flash & 100.8 & 2.03 & 3.08 & -36.8 & -1.7 & 0.17 & 0.23 & -67.9 & 9.2 & 0.43 & 0.55 & -66.5 \\
+Gemini 2.5 Pro & 93.2 & 1.81 & 2.69 & -37.8 & 14.7 & 0.54 & 0.70 & -65.5 & 37.4 & 1.01 & 1.42 & -58.6 \\
+\midrule
+Claude Sonnet 4 & 133.5 & 2.77 & 4.91 & -19.5 & 121.9 & 2.43 & 3.61 & -34.8 & -4.2 & 0.09 & 0.11 & -64.7 \\
+Claude Opus 4 & 129.1 & 2.48 & 3.89 & -34.7 & 33.8 & 1.01 & 1.49 & -33.7 & 102.7 & 2.12 & 3.23 & -34.7 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

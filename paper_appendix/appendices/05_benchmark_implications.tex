@@ -1,0 +1,28 @@
+\section{Benchmark Implications}
+% ══════════════════════════════════════════════════════════════
+
+The results suggest three rules for future cross-sectional LLM ranker benchmarks.
+First, baselines should include factor sorts and lightweight supervised rankers.
+Factor sorts test whether an LLM is rediscovering familiar style premia, while expanding-window models test whether the same panel already contains enough signal for a conventional learner.
+The gap between Random Forest/Ridge and the strongest LLMs in Tables~\ref{tab:longshort}--\ref{tab:ff6} is therefore more informative than a comparison against the market index alone.
+
+Second, evaluation should keep the ranking object fixed.
+Pointwise scores, pairwise tournaments, setwise reranking, and agentic debate can all be useful, but they should ultimately output the same monthly ordering over the same investable universe.
+This makes IC, quintile monotonicity, long--short spreads, and factor diagnostics directly comparable across methods.
+It also prevents an agentic system from changing the task by using additional data, extra lookups, or different rebalancing assumptions.
+
+Third, cost and reproducibility should be first-class metrics.
+Listwise prompting is attractive because it obtains the full cross-section in one call, whereas pairwise and agentic systems can scale call counts quickly.
+Reporting cost per monthly experiment, malformed-output handling, decoding settings, and conservative evaluation boundaries makes it possible to distinguish genuine ranking skill from engineering choices that are expensive or difficult to replicate.
+
+These rules also clarify how to read the negative findings.
+The underperforming models are not simply lower-return versions of the winners; they encode different implicit priors about the cross-section.
+GPT-4o mini, for example, ranks toward reversal and high-volatility names in a period when the opposite style was rewarded.
+A future benchmark should therefore measure not only whether a model wins in one sample but also whether its style exposure is stable, interpretable, and robust when market leadership changes.
+
+Finally, the current evidence should be viewed as a controlled starting point rather than a finished trading system.
+The 30-stock universe is small enough for transparent listwise prompting, and the transaction-cost model is intentionally simple.
+Broader universes, rolling sector composition, liquidity constraints, and turnover-aware construction are natural next steps.
+Future work should add broader universes, rolling membership, and richer information axes---such as disclosure text, which recent real-time event benchmarks show can explain announcement returns \citep{koijen2026agentic}---while keeping raw ranking quality separate from weighting or optimization gains.
+
+% ══════════════════════════════════════════════════════════════

@@ -1,0 +1,31 @@
+\section{Factor Loadings under Input Ablations}
+\label{app:ablation-factor}
+
+The factor-prior interpretation in Section~\ref{sec:factor} asks not only whether LLM rankings have alpha, but \emph{which information channel} generates the implicit ranking profile.
+
+Table~\ref{tab:ablation-ff6} reports FF6 loadings and alphas under fundamentals-only, market-only, and full-input settings for o3, Gemini 2.5 Pro, and Claude Opus 4.
+Table~\ref{tab:ablation-char} reports the corresponding within-universe style fingerprint for the same representative models.
+Figure~\ref{fig:ablation-ff6} visualizes how factor exposures shift when fundamentals or market summaries are removed.
+
+Two patterns emerge.
+First, \textbf{market-only inputs preserve most of the full-input factor profile}: positive momentum and negative value/profitability/investment loadings remain for the strongest models, consistent with the hypothesis-test result that full-input and market-only performance are not significantly different.
+Second, \textbf{fundamentals-only inputs weaken both alpha and style coherence}: some FF6 market and momentum exposure remains, but alpha collapses and characteristic fingerprints become noisier, indicating that sparse accounting panels alone do not sustain a stable economically useful factor-like prior in this universe.
+
+\input{tables/input_ablation_ff6_loadings.tex}
+
+\input{tables/input_ablation_char_exposure.tex}
+
+\begin{figure}[H]
+  \centering
+  \IfFileExists{figures/fig10_ablation_ff6_loadings.pdf}{%
+    \includegraphics[width=0.86\textwidth]{figures/fig10_ablation_ff6_loadings.pdf}%
+  }{%
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{2em}Run \texttt{python3 scripts/evaluate\_ablation\_factor\_loadings.py} to generate \texttt{figures/fig10\_ablation\_ff6\_loadings.pdf}.\vspace{2em}}}%
+  }
+  \caption{FF6 factor loadings of representative Q1$-$Q5 portfolios under input ablations. Red indicates positive loading and blue indicates negative loading.}
+  \Description{Heatmap of Fama-French six-factor loadings for three representative models under fundamentals-only, market-only, and full-input settings, with color indicating loading sign and magnitude.}
+  \label{fig:ablation-ff6}
+\end{figure}
+
+% ──────────────────────────────────────────────────────────────
+\clearpage

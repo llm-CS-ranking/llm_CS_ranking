@@ -1,0 +1,17 @@
+\section{Common-Window and Cost Robustness}
+\label{app:common-window}
+
+The main text emphasizes conservative model-specific windows because each LLM has a different public release or documented update boundary.
+As a complementary check, Table~\ref{tab:common-window} restricts LLMs and non-LLM baselines to a common ranking window so the comparison does not rely on different evaluation months.
+This table is not a replacement for the conservative-window results, but it verifies that the strongest LLM rankers remain competitive when the calendar is held fixed.
+
+\input{tables/common_window_longshort.tex}
+
+Table~\ref{tab:cost-sensitivity} varies one-way transaction costs for all expected-return rankers in the same common window.
+The long--short Sharpe ranking is stable from zero to 40\,bps, while very high costs predictably compress all active strategies.
+This supports the main-text interpretation that model differences are not solely an artifact of the baseline 40\,bps cost assumption.
+
+\input{tables/transaction_cost_sensitivity.tex}
+
+% ──────────────────────────────────────────────────────────────
+\clearpage

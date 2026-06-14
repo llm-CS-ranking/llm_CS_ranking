@@ -1,0 +1,232 @@
+model,display,mode,characteristic,corr,n_days
+gpt-4o-2024-05-13,GPT-4o,return,size,-0.23208903341565354,702
+gpt-4o-2024-05-13,GPT-4o,return,mom_12_1,-0.02178383047082524,702
+gpt-4o-2024-05-13,GPT-4o,return,rev_1m,-0.03872730453139639,702
+gpt-4o-2024-05-13,GPT-4o,return,vol_60d,-0.1822128511833987,702
+gpt-4o-2024-05-13,GPT-4o,return,ep_ratio,-0.17347179946070485,702
+gpt-4o-2024-05-13,GPT-4o,return,roe,-0.11053846351258005,702
+gpt-4o-2024-05-13,GPT-4o,return,asset_gr,-0.14713400266162094,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,return,size,0.10646345013748913,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,return,mom_12_1,-0.18609035219363929,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,return,rev_1m,0.2135155140512499,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,return,vol_60d,0.22802411869960806,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,return,ep_ratio,0.2230792246688479,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,return,roe,-0.00937094633038246,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,return,asset_gr,0.1858304924765488,702
+gpt-4.1-2025-04-14,GPT-4.1,return,size,-0.28704501902872326,326
+gpt-4.1-2025-04-14,GPT-4.1,return,mom_12_1,0.36923610363595255,326
+gpt-4.1-2025-04-14,GPT-4.1,return,rev_1m,-0.3756152620266459,326
+gpt-4.1-2025-04-14,GPT-4.1,return,vol_60d,-0.7021566121300812,326
+gpt-4.1-2025-04-14,GPT-4.1,return,ep_ratio,-0.6003229753157285,326
+gpt-4.1-2025-04-14,GPT-4.1,return,roe,-0.30565462605548915,326
+gpt-4.1-2025-04-14,GPT-4.1,return,asset_gr,-0.4701583669155966,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,return,size,-0.18645867115682782,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,return,mom_12_1,0.30121432143931753,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,return,rev_1m,-0.3733800420199937,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,return,vol_60d,-0.21564540198819485,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,return,ep_ratio,-0.2272119478799358,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,return,roe,-0.1315192128557164,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,return,asset_gr,0.02517917633097409,326
+gemini-2.5-flash,Gemini 2.5 Flash,return,size,-0.16811075752955737,390
+gemini-2.5-flash,Gemini 2.5 Flash,return,mom_12_1,0.4786279496771759,390
+gemini-2.5-flash,Gemini 2.5 Flash,return,rev_1m,-0.31504668424358917,390
+gemini-2.5-flash,Gemini 2.5 Flash,return,vol_60d,-0.5405580113004752,390
+gemini-2.5-flash,Gemini 2.5 Flash,return,ep_ratio,-0.5915508626375514,390
+gemini-2.5-flash,Gemini 2.5 Flash,return,roe,-0.21319312069526966,390
+gemini-2.5-flash,Gemini 2.5 Flash,return,asset_gr,-0.2403238661745856,390
+gemini-2.5-pro,Gemini 2.5 Pro,return,size,-0.14439436260456082,390
+gemini-2.5-pro,Gemini 2.5 Pro,return,mom_12_1,0.442753655270091,390
+gemini-2.5-pro,Gemini 2.5 Pro,return,rev_1m,-0.12775320778881846,390
+gemini-2.5-pro,Gemini 2.5 Pro,return,vol_60d,-0.782006291521891,390
+gemini-2.5-pro,Gemini 2.5 Pro,return,ep_ratio,-0.6969097240756359,390
+gemini-2.5-pro,Gemini 2.5 Pro,return,roe,-0.4167207021426935,390
+gemini-2.5-pro,Gemini 2.5 Pro,return,asset_gr,-0.3783448052407968,390
+gemini-3-flash-preview,Gemini 3 Flash,return,size,-0.13339685594166353,390
+gemini-3-flash-preview,Gemini 3 Flash,return,mom_12_1,0.49887477458436674,390
+gemini-3-flash-preview,Gemini 3 Flash,return,rev_1m,-0.3836477521930123,390
+gemini-3-flash-preview,Gemini 3 Flash,return,vol_60d,-0.5198608584200783,390
+gemini-3-flash-preview,Gemini 3 Flash,return,ep_ratio,-0.5900286194056122,390
+gemini-3-flash-preview,Gemini 3 Flash,return,roe,-0.2508813049484247,390
+gemini-3-flash-preview,Gemini 3 Flash,return,asset_gr,-0.35071368274104253,390
+gemini-3-pro-preview,Gemini 3 Pro,return,size,-0.16193410715232398,390
+gemini-3-pro-preview,Gemini 3 Pro,return,mom_12_1,0.4890773122804499,390
+gemini-3-pro-preview,Gemini 3 Pro,return,rev_1m,-0.33638128796326594,390
+gemini-3-pro-preview,Gemini 3 Pro,return,vol_60d,-0.6095269945951474,390
+gemini-3-pro-preview,Gemini 3 Pro,return,ep_ratio,-0.6545802512316906,390
+gemini-3-pro-preview,Gemini 3 Pro,return,roe,-0.28576814719118016,390
+gemini-3-pro-preview,Gemini 3 Pro,return,asset_gr,-0.35652795435138024,390
+claude-haiku-4-5-20251001,Claude Haiku 4.5,return,size,-0.30042706327703095,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,return,mom_12_1,0.20551957871454848,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,return,rev_1m,-0.26306106394023604,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,return,vol_60d,-0.4685168314826914,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,return,ep_ratio,-0.43126243574378564,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,return,roe,-0.14297419301783099,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,return,asset_gr,-0.19982162305907306,262
+claude-sonnet-4-20250514,Claude Sonnet 4,return,size,-0.26814386743265445,390
+claude-sonnet-4-20250514,Claude Sonnet 4,return,mom_12_1,0.36539735068122636,390
+claude-sonnet-4-20250514,Claude Sonnet 4,return,rev_1m,-0.33614258881998965,390
+claude-sonnet-4-20250514,Claude Sonnet 4,return,vol_60d,-0.49681252101422885,390
+claude-sonnet-4-20250514,Claude Sonnet 4,return,ep_ratio,-0.5225947173303782,390
+claude-sonnet-4-20250514,Claude Sonnet 4,return,roe,-0.21015879877687238,390
+claude-sonnet-4-20250514,Claude Sonnet 4,return,asset_gr,-0.3953130961072731,390
+claude-opus-4-20250514,Claude Opus 4,return,size,-0.1985829978599776,390
+claude-opus-4-20250514,Claude Opus 4,return,mom_12_1,0.5084944973506245,390
+claude-opus-4-20250514,Claude Opus 4,return,rev_1m,-0.22433440986877476,390
+claude-opus-4-20250514,Claude Opus 4,return,vol_60d,-0.5854807099191327,390
+claude-opus-4-20250514,Claude Opus 4,return,ep_ratio,-0.6342388326925418,390
+claude-opus-4-20250514,Claude Opus 4,return,roe,-0.24344247427241977,390
+claude-opus-4-20250514,Claude Opus 4,return,asset_gr,-0.4396998437488573,390
+gpt-4o-2024-05-13,GPT-4o,sharpe,size,0.03981176084390875,702
+gpt-4o-2024-05-13,GPT-4o,sharpe,mom_12_1,-0.24892130885276068,702
+gpt-4o-2024-05-13,GPT-4o,sharpe,rev_1m,0.23279110660931066,702
+gpt-4o-2024-05-13,GPT-4o,sharpe,vol_60d,0.0062224060594829236,702
+gpt-4o-2024-05-13,GPT-4o,sharpe,ep_ratio,0.09042701375701612,702
+gpt-4o-2024-05-13,GPT-4o,sharpe,roe,-0.02303213128998857,702
+gpt-4o-2024-05-13,GPT-4o,sharpe,asset_gr,-0.0186387935853335,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sharpe,size,0.08657453644105739,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sharpe,mom_12_1,-0.22300779473284013,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sharpe,rev_1m,0.12851540215249888,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sharpe,vol_60d,0.11696865997458882,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sharpe,ep_ratio,0.09878547050262927,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sharpe,roe,-0.06936113345263023,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sharpe,asset_gr,0.0896707675487612,702
+gpt-4.1-2025-04-14,GPT-4.1,sharpe,size,-0.1911758036343508,326
+gpt-4.1-2025-04-14,GPT-4.1,sharpe,mom_12_1,0.06437316892556881,326
+gpt-4.1-2025-04-14,GPT-4.1,sharpe,rev_1m,-0.33977645110047955,326
+gpt-4.1-2025-04-14,GPT-4.1,sharpe,vol_60d,-0.12129908454039365,326
+gpt-4.1-2025-04-14,GPT-4.1,sharpe,ep_ratio,-0.11673655941154794,326
+gpt-4.1-2025-04-14,GPT-4.1,sharpe,roe,-0.00839460794357132,326
+gpt-4.1-2025-04-14,GPT-4.1,sharpe,asset_gr,0.14497142327177928,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sharpe,size,-0.26970313663513357,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sharpe,mom_12_1,0.3414600880292148,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sharpe,rev_1m,-0.3125613889551663,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sharpe,vol_60d,-0.46043482311963213,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sharpe,ep_ratio,-0.36950006027089,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sharpe,roe,-0.0926514174482891,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sharpe,asset_gr,-0.3215441044233737,326
+gemini-2.5-flash,Gemini 2.5 Flash,sharpe,size,-0.12458222704956885,390
+gemini-2.5-flash,Gemini 2.5 Flash,sharpe,mom_12_1,0.12688674113602647,390
+gemini-2.5-flash,Gemini 2.5 Flash,sharpe,rev_1m,-0.2364941525309321,390
+gemini-2.5-flash,Gemini 2.5 Flash,sharpe,vol_60d,-0.028773890814104246,390
+gemini-2.5-flash,Gemini 2.5 Flash,sharpe,ep_ratio,-0.005269200146043363,390
+gemini-2.5-flash,Gemini 2.5 Flash,sharpe,roe,0.15744836517524072,390
+gemini-2.5-flash,Gemini 2.5 Flash,sharpe,asset_gr,0.3569728594804822,390
+gemini-2.5-pro,Gemini 2.5 Pro,sharpe,size,-0.2479933690496038,390
+gemini-2.5-pro,Gemini 2.5 Pro,sharpe,mom_12_1,-0.08865828106312729,390
+gemini-2.5-pro,Gemini 2.5 Pro,sharpe,rev_1m,-0.05330525185032688,390
+gemini-2.5-pro,Gemini 2.5 Pro,sharpe,vol_60d,0.01900031666891282,390
+gemini-2.5-pro,Gemini 2.5 Pro,sharpe,ep_ratio,0.14122010395004342,390
+gemini-2.5-pro,Gemini 2.5 Pro,sharpe,roe,0.07621268000533028,390
+gemini-2.5-pro,Gemini 2.5 Pro,sharpe,asset_gr,0.2975158960528531,390
+gemini-3-flash-preview,Gemini 3 Flash,sharpe,size,-0.3105082309500319,390
+gemini-3-flash-preview,Gemini 3 Flash,sharpe,mom_12_1,-0.005402349517377585,390
+gemini-3-flash-preview,Gemini 3 Flash,sharpe,rev_1m,-0.49055521282526365,390
+gemini-3-flash-preview,Gemini 3 Flash,sharpe,vol_60d,0.04249421521920773,390
+gemini-3-flash-preview,Gemini 3 Flash,sharpe,ep_ratio,0.08050608382397487,390
+gemini-3-flash-preview,Gemini 3 Flash,sharpe,roe,0.3081335491996407,390
+gemini-3-flash-preview,Gemini 3 Flash,sharpe,asset_gr,0.03477311630463065,390
+gemini-3-pro-preview,Gemini 3 Pro,sharpe,size,-0.0434075785611381,390
+gemini-3-pro-preview,Gemini 3 Pro,sharpe,mom_12_1,0.26316650553337645,390
+gemini-3-pro-preview,Gemini 3 Pro,sharpe,rev_1m,-0.43322082093991593,390
+gemini-3-pro-preview,Gemini 3 Pro,sharpe,vol_60d,-0.05291261571774532,390
+gemini-3-pro-preview,Gemini 3 Pro,sharpe,ep_ratio,-0.14410114892189244,390
+gemini-3-pro-preview,Gemini 3 Pro,sharpe,roe,0.07685904024524977,390
+gemini-3-pro-preview,Gemini 3 Pro,sharpe,asset_gr,0.16525090466563208,390
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sharpe,size,-0.24694077579059917,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sharpe,mom_12_1,0.3221085661761092,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sharpe,rev_1m,-0.2891721166815689,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sharpe,vol_60d,-0.5478954353899322,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sharpe,ep_ratio,-0.490258152724886,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sharpe,roe,-0.2259912340282767,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sharpe,asset_gr,-0.3434809698536841,262
+claude-sonnet-4-20250514,Claude Sonnet 4,sharpe,size,-0.19893963307936346,390
+claude-sonnet-4-20250514,Claude Sonnet 4,sharpe,mom_12_1,-0.010000164911873369,390
+claude-sonnet-4-20250514,Claude Sonnet 4,sharpe,rev_1m,-0.27569326293822566,390
+claude-sonnet-4-20250514,Claude Sonnet 4,sharpe,vol_60d,-0.005199685385176842,390
+claude-sonnet-4-20250514,Claude Sonnet 4,sharpe,ep_ratio,-0.007384329143507632,390
+claude-sonnet-4-20250514,Claude Sonnet 4,sharpe,roe,0.1509307995020366,390
+claude-sonnet-4-20250514,Claude Sonnet 4,sharpe,asset_gr,0.01217022334577427,390
+claude-opus-4-20250514,Claude Opus 4,sharpe,size,0.013189855922193955,390
+claude-opus-4-20250514,Claude Opus 4,sharpe,mom_12_1,-0.06252391823442358,390
+claude-opus-4-20250514,Claude Opus 4,sharpe,rev_1m,0.05023604268416275,390
+claude-opus-4-20250514,Claude Opus 4,sharpe,vol_60d,0.2522171724939682,390
+claude-opus-4-20250514,Claude Opus 4,sharpe,ep_ratio,0.2408070731932801,390
+claude-opus-4-20250514,Claude Opus 4,sharpe,roe,0.1784063737468981,390
+claude-opus-4-20250514,Claude Opus 4,sharpe,asset_gr,0.2399828637787293,390
+gpt-4o-2024-05-13,GPT-4o,sortino,size,-0.00483327321994184,702
+gpt-4o-2024-05-13,GPT-4o,sortino,mom_12_1,-0.1181394541948147,702
+gpt-4o-2024-05-13,GPT-4o,sortino,rev_1m,0.21642638312058113,702
+gpt-4o-2024-05-13,GPT-4o,sortino,vol_60d,0.07209861120511811,702
+gpt-4o-2024-05-13,GPT-4o,sortino,ep_ratio,0.1092969196528643,702
+gpt-4o-2024-05-13,GPT-4o,sortino,roe,0.05769978883351399,702
+gpt-4o-2024-05-13,GPT-4o,sortino,asset_gr,-0.08268723066175492,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sortino,size,0.19446755247630698,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sortino,mom_12_1,-0.19055261896668715,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sortino,rev_1m,0.14403731899607117,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sortino,vol_60d,0.264128676037572,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sortino,ep_ratio,0.21177347325144186,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sortino,roe,0.09370386691130493,702
+gpt-4o-mini-2024-07-18,GPT-4o mini,sortino,asset_gr,0.18887743734578158,702
+gpt-4.1-2025-04-14,GPT-4.1,sortino,size,-0.14329674611700705,326
+gpt-4.1-2025-04-14,GPT-4.1,sortino,mom_12_1,0.11876460947568807,326
+gpt-4.1-2025-04-14,GPT-4.1,sortino,rev_1m,-0.15337806172368765,326
+gpt-4.1-2025-04-14,GPT-4.1,sortino,vol_60d,-0.31732776699713516,326
+gpt-4.1-2025-04-14,GPT-4.1,sortino,ep_ratio,-0.21386503404601498,326
+gpt-4.1-2025-04-14,GPT-4.1,sortino,roe,-0.1295589196086367,326
+gpt-4.1-2025-04-14,GPT-4.1,sortino,asset_gr,0.050956250477309804,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sortino,size,-0.23317224928712965,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sortino,mom_12_1,0.3034458887588258,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sortino,rev_1m,-0.2504107176724301,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sortino,vol_60d,-0.059504016380604825,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sortino,ep_ratio,-0.10058227085767125,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sortino,roe,0.050693298232929694,326
+gpt-4.1-mini-2025-04-14,GPT-4.1 mini,sortino,asset_gr,-0.04804342740188333,326
+gemini-2.5-flash,Gemini 2.5 Flash,sortino,size,-0.2334370845637676,390
+gemini-2.5-flash,Gemini 2.5 Flash,sortino,mom_12_1,-0.14518356340951236,390
+gemini-2.5-flash,Gemini 2.5 Flash,sortino,rev_1m,-0.24808758652283885,390
+gemini-2.5-flash,Gemini 2.5 Flash,sortino,vol_60d,0.21677221144562137,390
+gemini-2.5-flash,Gemini 2.5 Flash,sortino,ep_ratio,0.30190989891235676,390
+gemini-2.5-flash,Gemini 2.5 Flash,sortino,roe,0.32367844292761383,390
+gemini-2.5-flash,Gemini 2.5 Flash,sortino,asset_gr,0.40814518819619444,390
+gemini-2.5-pro,Gemini 2.5 Pro,sortino,size,-0.17561049375680585,390
+gemini-2.5-pro,Gemini 2.5 Pro,sortino,mom_12_1,-0.16849174161087527,390
+gemini-2.5-pro,Gemini 2.5 Pro,sortino,rev_1m,-0.2617787116148608,390
+gemini-2.5-pro,Gemini 2.5 Pro,sortino,vol_60d,0.2908340075162503,390
+gemini-2.5-pro,Gemini 2.5 Pro,sortino,ep_ratio,0.33632319783534137,390
+gemini-2.5-pro,Gemini 2.5 Pro,sortino,roe,0.32000781776351334,390
+gemini-2.5-pro,Gemini 2.5 Pro,sortino,asset_gr,0.4783421643910895,390
+gemini-3-flash-preview,Gemini 3 Flash,sortino,size,-0.11938621730632243,390
+gemini-3-flash-preview,Gemini 3 Flash,sortino,mom_12_1,-0.06355646570602097,390
+gemini-3-flash-preview,Gemini 3 Flash,sortino,rev_1m,-0.3993309834267,390
+gemini-3-flash-preview,Gemini 3 Flash,sortino,vol_60d,0.2783246506737018,390
+gemini-3-flash-preview,Gemini 3 Flash,sortino,ep_ratio,0.26020210367564833,390
+gemini-3-flash-preview,Gemini 3 Flash,sortino,roe,0.40639091535298083,390
+gemini-3-flash-preview,Gemini 3 Flash,sortino,asset_gr,0.32287322226451154,390
+gemini-3-pro-preview,Gemini 3 Pro,sortino,size,-0.1345240810915893,390
+gemini-3-pro-preview,Gemini 3 Pro,sortino,mom_12_1,-0.033213923083180226,390
+gemini-3-pro-preview,Gemini 3 Pro,sortino,rev_1m,-0.4143836878036375,390
+gemini-3-pro-preview,Gemini 3 Pro,sortino,vol_60d,0.2488707236432987,390
+gemini-3-pro-preview,Gemini 3 Pro,sortino,ep_ratio,0.23941083254932471,390
+gemini-3-pro-preview,Gemini 3 Pro,sortino,roe,0.32619255596569047,390
+gemini-3-pro-preview,Gemini 3 Pro,sortino,asset_gr,0.3426991107434773,390
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sortino,size,-0.18530258599102134,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sortino,mom_12_1,0.16336986457386346,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sortino,rev_1m,-0.23885427062814973,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sortino,vol_60d,-0.3006026083797394,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sortino,ep_ratio,-0.29133720293736276,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sortino,roe,-0.13576118501052636,262
+claude-haiku-4-5-20251001,Claude Haiku 4.5,sortino,asset_gr,-0.1620626013122834,262
+claude-sonnet-4-20250514,Claude Sonnet 4,sortino,size,-0.21543966795308822,390
+claude-sonnet-4-20250514,Claude Sonnet 4,sortino,mom_12_1,-0.13729552918628915,390
+claude-sonnet-4-20250514,Claude Sonnet 4,sortino,rev_1m,0.08712280549322497,390
+claude-sonnet-4-20250514,Claude Sonnet 4,sortino,vol_60d,0.13317981024806164,390
+claude-sonnet-4-20250514,Claude Sonnet 4,sortino,ep_ratio,0.2927670626084695,390
+claude-sonnet-4-20250514,Claude Sonnet 4,sortino,roe,0.2697467767221342,390
+claude-sonnet-4-20250514,Claude Sonnet 4,sortino,asset_gr,0.27430151735516883,390
+claude-opus-4-20250514,Claude Opus 4,sortino,size,-0.19293051498150582,390
+claude-opus-4-20250514,Claude Opus 4,sortino,mom_12_1,0.002147625508100322,390
+claude-opus-4-20250514,Claude Opus 4,sortino,rev_1m,-0.36847390398558705,390
+claude-opus-4-20250514,Claude Opus 4,sortino,vol_60d,-0.010725656708514851,390
+claude-opus-4-20250514,Claude Opus 4,sortino,ep_ratio,-0.012852882472955032,390
+claude-opus-4-20250514,Claude Opus 4,sortino,roe,0.12608493372732077,390
+claude-opus-4-20250514,Claude Opus 4,sortino,asset_gr,0.0693397361782789,390

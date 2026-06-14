@@ -1,0 +1,71 @@
+\section{Quintile Portfolio Performance}
+\label{app:quintile-cagr}
+
+Table~\ref{tab:quintile-cagr} reports the gross CAGR of each quintile portfolio before transaction costs.
+Monotonically decreasing values from Q1 to Q5 indicate effective ranking; anti-monotonic patterns (Q5 $>$ Q1) indicate counter-productive signals.
+
+\begin{table}[H]
+\centering
+\caption{Gross full-window quintile CAGR (\%) by model and prediction mode, before transaction costs. Bold marks the best value in each column within each panel.}
+\label{tab:quintile-cagr}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{0.80}
+\begin{adjustbox}{width=\textwidth,totalheight=0.78\textheight,keepaspectratio}
+\begin{tabular}{ll rrrrrr}
+\toprule
+\textbf{Mode} & \textbf{Model} & \textbf{Q1} & \textbf{Q2} & \textbf{Q3} & \textbf{Q4} & \textbf{Q5} & \textbf{Q1$-$Q5} \\
+\midrule
+\multicolumn{8}{l}{\textit{Panel A: Exp. Return}} \\
+\midrule
+& GPT-4o & 41.1 & 28.9 & 22.5 & 26.5 & \textbf{49.1} & $-$9.3 \\
+& GPT-4o mini & $-$5.3 & 28.9 & \textbf{56.1} & \textbf{61.9} & 45.5 & $-$37.0 \\
+& GPT-4.1 & 92.5 & 29.4 & 10.7 & 0.6 & $-$7.1 & 105.1 \\
+& GPT-4.1 mini & 124.7 & 29.5 & 5.0 & $-$2.5 & $-$11.5 & 138.4 \\
+& GPT-4.1 nano & 77.9 & 13.6 & 12.8 & $-$5.8 & 28.8 & 34.6 \\
+& o4-mini & 77.9 & 37.7 & 11.3 & $-$10.8 & 5.5 & 64.9 \\
+& o3 & 87.0 & \textbf{66.9} & 5.7 & 0.5 & $-$26.0 & 153.2 \\
+\cmidrule(l){2-8}
+& Gem. 2.5 Flash & 83.0 & 51.4 & 26.3 & $-$11.5 & $-$19.5 & 120.7 \\
+& Gem. 2.5 Pro & 62.0 & 38.7 & 34.0 & 7.4 & $-$23.2 & 107.9 \\
+\cmidrule(l){2-8}
+& Cl. Sonnet 4 & \textbf{145.0} & 14.7 & 8.8 & $-$15.5 & $-$7.0 & \textbf{158.2} \\
+& Cl. Opus 4 & 106.7 & 33.2 & 22.2 & $-$16.0 & $-$20.6 & 156.3 \\
+\midrule
+\multicolumn{8}{l}{\textit{Panel B: Sharpe}} \\
+\midrule
+& GPT-4o & $-$6.2 & 14.6 & 12.1 & 41.3 & \textbf{90.7} & $-$53.5 \\
+& GPT-4o mini & $-$7.0 & 41.1 & \textbf{51.2} & \textbf{63.3} & 44.5 & $-$37.4 \\
+& GPT-4.1 & 124.5 & 35.9 & $-$5.0 & $-$14.7 & $-$1.9 & 114.9 \\
+& GPT-4.1 mini & \textbf{137.5} & 26.6 & $-$9.9 & 13.3 & $-$12.8 & \textbf{168.3} \\
+& GPT-4.1 nano & 50.1 & 18.3 & 20.9 & $-$0.0 & 18.8 & 20.5 \\
+& o4-mini & 73.5 & 36.0 & 9.8 & $-$12.7 & 10.2 & 40.8 \\
+& o3 & 102.5 & 51.0 & $-$2.5 & $-$17.5 & $-$3.5 & 96.6 \\
+\cmidrule(l){2-8}
+& Gem. 2.5 Flash & 39.8 & \textbf{60.3} & $-$2.2 & 23.9 & 15.9 & 8.3 \\
+& Gem. 2.5 Pro & 85.4 & 19.0 & 21.6 & $-$11.1 & 27.7 & 27.0 \\
+\cmidrule(l){2-8}
+& Cl. Sonnet 4 & 104.0 & 27.2 & 23.2 & 9.2 & $-$24.4 & 147.3 \\
+& Cl. Opus 4 & 66.4 & 5.9 & 19.2 & 18.3 & $-$0.5 & 53.5 \\
+\midrule
+\multicolumn{8}{l}{\textit{Panel C: Sortino}} \\
+\midrule
+& GPT-4o & 2.0 & 21.5 & 26.4 & 59.4 & \textbf{77.9} & $-$45.4 \\
+& GPT-4o mini & $-$9.2 & 37.0 & \textbf{46.0} & \textbf{79.8} & 56.6 & $-$43.8 \\
+& GPT-4.1 & 93.9 & 44.7 & $-$5.1 & $-$15.2 & 22.1 & 49.7 \\
+& GPT-4.1 mini & 60.8 & 60.6 & $-$1.3 & 24.6 & $-$22.1 & 95.3 \\
+& GPT-4.1 nano & 52.7 & 12.4 & 10.6 & 1.5 & 46.8 & $-$1.2 \\
+& o4-mini & 74.1 & 56.2 & $-$4.3 & $-$2.6 & 2.9 & 50.8 \\
+& o3 & 79.9 & \textbf{62.1} & $-$18.1 & 1.4 & 1.8 & 61.6 \\
+\cmidrule(l){2-8}
+& Gem. 2.5 Flash & 75.9 & 1.5 & 45.3 & $-$7.8 & 25.6 & 18.9 \\
+& Gem. 2.5 Pro & 75.9 & 16.3 & 22.1 & 10.9 & 3.0 & 50.2 \\
+\cmidrule(l){2-8}
+& Cl. Sonnet 4 & 72.6 & 12.3 & 7.8 & 2.1 & 43.0 & 6.9 \\
+& Cl. Opus 4 & \textbf{130.4} & 6.9 & 22.6 & $-$1.8 & $-$5.7 & \textbf{125.8} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+% -------------------------------------------------------------

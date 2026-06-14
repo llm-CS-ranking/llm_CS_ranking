@@ -1,0 +1,22 @@
+\begin{table}[H]
+\centering
+\caption{Paired input-ablation tests. Differences are full input minus the ablated input; p-values use model-clustered sign-flip tests.}
+\label{tab:input-ablation-tests}
+\small
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{llrrrrr}
+\toprule
+\textbf{Comparison} & \textbf{Metric} & \textbf{Both} & \textbf{Ablated} & \textbf{$\Delta$} & \textbf{95\% CI} & \textbf{$p$} \\
+\midrule
+Both - Market only & LS CAGR & 43.6 & 76.7 & -33.1 & [-67.8, 5.0] & 0.119 \\
+Both - Market only & LS Sharpe & 0.79 & 1.41 & -0.62 & [-1.40, 0.19] & 0.183 \\
+Both - Market only & Mean IC & 19.8 & 19.0 & 0.8 & [-8.4, 8.9] & 0.857 \\
+\midrule
+Both - Fund. only & LS CAGR & 43.6 & 1.4 & 42.2 & [12.4, 69.2] & 0.026 \\
+Both - Fund. only & LS Sharpe & 0.79 & 0.02 & 0.78 & [-0.23, 1.62] & 0.147 \\
+Both - Fund. only & Mean IC & 19.8 & 3.5 & 16.3 & [5.6, 25.3] & 0.018 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

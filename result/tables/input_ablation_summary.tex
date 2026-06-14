@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\caption{Input ablation summary across LLM rankers. CAGR and IC are reported in percent; Sharpe is annualized.}
+\label{tab:input-ablation}
+\small
+\begin{tabular}{llrrrrr}
+\toprule
+\textbf{Input} & \textbf{Objective} & \textbf{Mean CAGR} & \textbf{Mean Shp} & \textbf{Mean IC} & \textbf{Best Shp} & \textbf{N} \\
+\midrule
+Fund. + Market & Exp. Return & 72.0 & 1.37 & 23.1 & 2.77 & 11 \\
+Fund. + Market & Sharpe & 38.2 & 0.68 & 18.2 & 2.81 & 11 \\
+Fund. + Market & Sortino & 20.5 & 0.32 & 18.1 & 2.12 & 11 \\
+Fund. only & Exp. Return & 15.7 & 0.55 & 4.6 & 1.18 & 11 \\
+Fund. only & Sharpe & -5.2 & -0.26 & 2.5 & 1.14 & 11 \\
+Fund. only & Sortino & -6.4 & -0.25 & 3.3 & 0.64 & 11 \\
+Market only & Exp. Return & 98.1 & 1.61 & 23.8 & 3.79 & 11 \\
+Market only & Sharpe & 71.0 & 1.41 & 17.8 & 3.19 & 11 \\
+Market only & Sortino & 60.9 & 1.22 & 15.5 & 3.36 & 11 \\
+\bottomrule
+\end{tabular}
+\end{table}

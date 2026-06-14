@@ -1,0 +1,22 @@
+\section{Introduction}
+% ══════════════════════════════════════════════════════════════
+
+Large language models have opened new possibilities for financial analysis: unlike traditional quantitative factors, they can synthesize earnings trends, competitive dynamics, and macro context into investment judgments with no task-specific training.
+The empirical question is \emph{how} to formulate this capability as a reproducible financial task rather than an anecdotal stock-picking exercise.
+Prior work has relied either on coarse rating classification \citep{papasotiriou2024ai}---too coarse for portfolio construction and typically evaluated on a single model without backtest---or on raw return prediction, which is dominated by noise \citep{gu2020empirical}.
+We argue that \emph{ranking}---ordering stocks from most to least attractive---is the most natural middle ground: it is strictly more general than classification or regression, sidesteps the magnitude-noise of returns, and directly enables quintile portfolios, long--short strategies, and Spearman rank-IC evaluation.
+Our factor-model perspective treats each LLM as an implicit cross-sectional prior: given the same point-in-time information set, different models induce different expected-return orderings, style exposures, and residual alphas.
+The object is therefore a controlled benchmark of model-induced priors, not a claim that a short-window NASDAQ backtest is directly deployable as a production strategy.
+
+We organize the study around four research questions:
+\textbf{RQ1}: do LLM rankings embed distinct factor-like priors beyond classical FF6 premia?
+\textbf{RQ2}: how do factor loadings and alphas change when the LLM sees fundamentals only, market summaries only, or both?
+\textbf{RQ3}: which vendor generation delivers the strongest expected-return signal after transaction costs?
+\textbf{RQ4}: are LLM rankings mechanical rediscoveries of known style sorts, or do they combine market priors with model-specific tilts?
+Our contributions are designed to make that benchmark auditable:
+(i) a self-contained evaluation of zero-shot LLM cross-sectional rankings using FF6 spanning tests, within-universe style fingerprints, common-window checks, and transaction costs;
+(ii) a cross-model benchmark across 11 frontier LLMs, non-LLM factor/ML baselines, and expected-return as the primary objective;
+(iii) evidence that strong LLMs in this sample deliver large FF6 alphas with a shared growth--momentum tilt but vendor-specific loadings; and
+(iv) an input ablation showing that market summaries dominate fundamentals in both performance and factor-profile preservation.
+
+% ══════════════════════════════════════════════════════════════

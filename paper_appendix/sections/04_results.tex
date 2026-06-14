@@ -1,0 +1,118 @@
+\section{Results}
+% ══════════════════════════════════════════════════════════════
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.95\textwidth]{figures/fig2_quintile_monotonicity.pdf}
+  \caption{Quintile CAGR by model and prompt objective in each model's conservative evaluation window.}
+  \Description{Grouped bar chart of annualized CAGR across five ranked quintiles for each model and prompt objective, showing strong Q1-to-Q5 separation for o3, Gemini 2.5 models, and GPT-4.1, and reversed patterns for weaker GPT-4o-family models.}
+  \label{fig:monotonicity}
+\end{figure*}
+
+\subsection{Q1 Performance and Quintile Monotonicity}
+
+Figure~\ref{fig:monotonicity} displays the CAGR of each quintile, the central diagnostic for whether the entire ranking produces cross-sectional separation rather than a single lucky top pick.
+\textbf{o3 is the strongest top-quintile ranker}, reaching a Q1 CAGR of 280.4\% (Sharpe = 4.41) in the expected-return mode---far above the benchmarks---with a cleanly monotonic Q1$\to$Q5 pattern.
+Gemini 2.5 Flash, Gemini 2.5 Pro, and GPT-4.1 show similarly strong top-quintile performance, with expected-return Q1 CAGRs above 240\%.
+In contrast, \textbf{GPT-4o mini produces negative Q1 returns} and negative long--short spreads, a signal worse than random in this evaluation window.
+This first screen answers whether the LLM output is an economically ordered ranking at all before applying factor diagnostics.
+
+\subsection{Long--Short Spread}
+
+Table~\ref{tab:longshort} reports the market-neutral Q1$-$Q5 long--short portfolio together with rank IC, with boldface marking the best model within each metric--objective column.
+o3 is the strongest expected-return spread model in the conservative window, reaching a 466.0\% net long--short CAGR, Sharpe 5.54, Sortino 10.70, and IC 0.594 after charging both long- and short-leg turnover.
+Gemini 2.5 Pro (458.8\%, Sharpe 4.99, IC 0.577), Gemini 2.5 Flash (380.7\%, Sharpe 4.79, IC 0.513), and GPT-4.1 (367.6\%, Sharpe 4.72, IC 0.549) also deliver large positive spreads.
+GPT-4o and GPT-4o mini produce negative long--short returns in the conservative window, confirming that model choice can flip the sign of the induced cross-sectional prior.
+Because these are annualized short-window portfolio statistics, the relevant evidence is their agreement with IC, ensemble, same-window, and factor-spanning diagnostics, not the CAGR magnitude alone.
+
+\input{tables/conservative_longshort.tex}
+
+An offline average-rank ensemble check shows that the signal is not purely a single-model artifact.
+Table~\ref{tab:ensemble-robustness} averages expected-return ranks across model sets on their common admissible months.
+The nine-model consensus across GPT-4.1, o-series, Gemini 2.5, and Claude 4 families reaches a 474.2\% net long--short CAGR, Sharpe 5.44, and IC 0.549 from 2025-07 to 2025-12, while the OpenAI reasoning consensus reaches Sharpe 5.39.
+
+\input{tables/conservative_ensemble_robustness.tex}
+
+\subsection{Factor Analysis of LLM Rankings}
+\label{sec:factor}
+
+The central asset-pricing question is whether LLM-induced orderings behave like factor-like cross-sectional priors.
+If rankings simply re-discover known risk premia, their long--short returns should be spanned by standard factor models; if not, they should exhibit distinct loadings and alphas.
+We address this with two analyses: (i) time-series \emph{spanning regressions} of Q1$-$Q5 daily returns on established factors \citep{fama1993common,carhart1997persistence,fama2015fivefactor}, and (ii) \emph{characteristic-based style analysis} mirroring the classical factor workflow (sort, form long--short, test alpha) but replacing the human sort with the LLM's ranking.
+Section~\ref{sec:input-ablation} applies the same logic to fundamentals-only and market-only input ablations.
+
+\textbf{Spanning test.}
+For each expected-return LLM ranker, we regress gross daily Q1$-$Q5 returns on FF6 factors \citep{french2025library} with Newey--West HAC SE (5 lags); Table~\ref{tab:ff6} reports annualized alpha, factor loadings, and adjusted $R^2$.
+Three findings stand out: (i) \emph{winning LLMs have large, highly significant alphas}---o3 $\alpha=351\%$ ($t=5.7$), Gemini 2.5 Pro $\alpha=340\%$ ($t=4.7$), and Gemini 2.5 Flash $\alpha=285\%$ ($t=4.7$)---so their returns are not mechanically spanned by the standard factor zoo in this benchmark;
+(ii) adjusted $R^2$ ranges from 0.08 to 0.52, indicating that standard factors explain part, but not all, of the spread-return variation;
+(iii) \emph{failing models have significantly negative alphas} (GPT-4o mini $\alpha=-55\%$, $t=-4.5$), i.e., structurally counter-factorial during the AI-rally period.
+
+\input{tables/conservative_ff6.tex}
+
+\textbf{Style fingerprint.}
+Because global Fama--French factors are built on the full US cross-section while our universe is 30 mega-cap NASDAQ stocks, they may understate within-universe style tilts.
+We therefore rank stocks each month on each characteristic (normalized to $[0,1]$ so that $+1$ is the factor's traditional ``long'' side) and average the rank within each LLM's Q1 and Q5.
+Figure~\ref{fig:style} visualizes the Q1$-$Q5 style fingerprint for the expected-return mode.
+
+\begin{figure}[!b]
+  \centering
+  \includegraphics[width=0.96\columnwidth]{figures/fig3_char_fingerprint.pdf}
+  \caption{Within-universe Q1$-$Q5 style fingerprint in the expected-return mode. Positive cells tilt toward the characteristic's traditional long side.}
+  \Description{Heatmap of characteristic tilts for each model's top-minus-bottom quintile portfolio, with red indicating positive exposure and blue indicating negative exposure.}
+  \label{fig:style}
+\end{figure}
+
+A consistent pattern emerges across the strongest models: large positive momentum tilts ($+0.23$ to $+0.32$) combined with \emph{negative} exposures to low-volatility, value, profitability, and conservative-investment---a ``growth--momentum chaser'' style that worked in the 2024--2025 AI rally and matches their FF6 loadings in Table~\ref{tab:ff6}.
+GPT-4o mini displays the mirror image (negative momentum, positive reversal and volatility), explaining its anti-monotonic returns: it systematically picks defensive, recently-weak stocks in a period when the opposite was rewarded.
+Within-universe factor-mimicking correlations show the same qualitative pattern at the daily-return level.
+
+Together these results imply that (a) LLM long--short portfolios in this panel are not fully recovered by linear combinations of classical style factors---consistent with LLM-based factor generation \citep{cheng2024chatgptfactor}---and (b) each LLM embeds a distinct implicit prior over which characteristics predict returns.
+Selecting an LLM therefore changes the implicit factor exposure being evaluated.
+
+\subsection{Input Ablation and Factor Loadings}
+\label{sec:input-ablation}
+
+The factor-prior interpretation also asks which information channel generates the implicit ranking profile.
+We re-run every model--objective pair with fundamentals only, market summaries only, or both inputs, then repeat the FF6 spanning test for one representative model per vendor in expected-return mode.
+Table~\ref{tab:input-ablation-main} shows that market-only prompts retain most of the measured signal and slightly exceed the full prompt on average in the conservative window, whereas fundamentals-only prompts are much weaker; Panel C links that performance gap to changes in HML, CMA, and momentum loadings for representative models.
+This supports the interpretation that recent market summaries, rather than sparse accounting panels alone, carry most of the observed ranking signal in this narrow universe.
+
+\input{tables/conservative_input_ablation.tex}
+
+\begin{figure*}[!t]
+  \centering
+  \includegraphics[width=0.94\textwidth]{figures/fig4_ls_cumulative_returns.pdf}
+  \caption{Cumulative Q1$-$Q5 wealth by model and prompt objective; the dashed line marks zero spread wealth.}
+  \Description{Line plots of cumulative long-short wealth over time for each model and prompt objective, showing persistent gains for strong models and losses for weak models relative to a zero-spread baseline.}
+  \label{fig:ls-cumret-main}
+\end{figure*}
+
+\subsection{Rank IC Analysis}
+
+Because Table~\ref{tab:longshort} reports rank IC next to portfolio outcomes, it also checks whether returns arise from genuine cross-sectional ordering rather than a few lucky names.
+Across the LLM benchmark, \textbf{o3 achieves the highest expected-return IC} (0.594), followed by Gemini 2.5 Pro (0.577), GPT-4.1 (0.549), and Claude Sonnet 4 (0.534).
+GPT-4.1 mini remains positive after patching malformed months (IC = 0.449), while GPT-4o mini is negative across all modes---its rankings are systematically inversely correlated with realized outcomes.
+
+\subsection{Prediction Mode and Cumulative Returns}
+
+Across the included models, the \textbf{expected-return mode remains the clearest primary benchmark}: it directly targets the holding-period objective and produces the strongest spread for several of the top rankers, while Sharpe/Sortino prompts act more like style-control variants.
+Sharpe/Sortino prompts win for specific models (e.g., GPT-4.1 reaches its best Q1 CAGR of 257.3\% in Sortino mode) but produce more variable results overall, suggesting expected-return prompts remain the clearest primary benchmark.
+Figure~\ref{fig:ls-cumret-main} shows the same pattern in cumulative wealth: Gemini 2.5 Pro/Flash and GPT-4.1 accumulate positive spreads, while GPT-4o and GPT-4o mini lose money.
+
+\subsection{Protocol Checks}
+
+Several design choices make the benchmark conservative.
+First, all LLM and non-LLM rankers are evaluated on the same monthly universe, holding-period definition, 2-day execution lag, and 40\,bps one-way transaction cost charged to both long- and short-leg turnover.
+The performance rows in Table~\ref{tab:longshort} therefore share the same market data, universe, rebalance schedule, and transaction-cost accounting, so differences reflect the induced rankings rather than different portfolio mechanics.
+Second, the model table fixes the information boundary induced by knowledge cutoffs.
+Because newer models have shorter admissible post-cutoff windows, we avoid interpreting raw CAGR alone and instead emphasize within-vendor generation comparisons, rank IC, same-window non-LLM controls, and FF6 alphas.
+The conservative boundary prevents newer preview models from borrowing pre-release 2025 months and makes the negative GPT-4o-family results directly visible.
+After patching malformed non-deprecated OpenAI outputs, all included model--mode panels have at least 20 ranked names in each evaluated month.
+
+Third, the listwise protocol uses one deterministic call per model--month--objective rather than prompt search, voting, or hand repair.
+Malformed JSON is discarded rather than manually corrected, and temperature is fixed at zero.
+This keeps the reported differences attributable to the ranker induced by a frontier model under a common prompt, not to downstream engineering.
+It also makes the benchmark a useful lower bound for future agentic systems: an agentic ranker, pairwise tournament, or ensemble should be compared against these single-call listwise results under the same information set and cost accounting.
+
+
+% ══════════════════════════════════════════════════════════════

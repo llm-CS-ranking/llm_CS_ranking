@@ -1,0 +1,2 @@
+"""Focused figure renderers."""
+

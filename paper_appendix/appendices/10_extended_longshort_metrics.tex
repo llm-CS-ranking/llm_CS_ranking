@@ -1,0 +1,70 @@
+\section{Extended Long--Short Portfolio Metrics}
+\label{app:ls-extended}
+
+Table~\ref{tab:ls-extended} reports gross full-window extended performance metrics for the long--short (Q1$-$Q5) portfolio, complementing the net 40\,bps summary in Table~\ref{tab:longshort}.
+
+\begin{table}[H]
+\centering
+\caption{Extended gross full-window Q1$-$Q5 long--short metrics, before transaction costs. Bold indicates the best value in each metric column within each panel.}
+\label{tab:ls-extended}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{0.80}
+\begin{adjustbox}{width=\textwidth,totalheight=0.78\textheight,keepaspectratio}
+\begin{tabular}{ll rrrrrrr}
+\toprule
+\textbf{Mode} & \textbf{Model} & \textbf{CAGR} & \textbf{Vol} & \textbf{Sharpe} & \textbf{Sortino} & \textbf{MDD} & \textbf{Calmar} & \textbf{Hit\%} \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel A: Exp. Return}} \\
+\midrule
+& GPT-4o & $-$9.3 & 31.2 & $-$0.16 & $-$0.21 & $-$59.7 & $-$0.156 & 48.8 \\
+& GPT-4o mini & $-$37.0 & \textbf{23.2} & $-$1.87 & $-$2.45 & $-$79.5 & $-$0.465 & 43.1 \\
+& GPT-4.1 & 105.1 & 35.0 & 2.21 & 3.48 & $-$31.2 & 3.375 & 54.1 \\
+& GPT-4.1 mini & 138.4 & 34.6 & 2.67 & 4.45 & $-$32.8 & 4.224 & 52.3 \\
+& GPT-4.1 nano & 34.6 & 27.2 & 1.22 & 1.82 & $-$23.8 & 1.452 & 52.0 \\
+& o4-mini & 64.9 & 34.2 & 1.63 & 2.38 & $-$43.7 & 1.486 & 54.1 \\
+& o3 & 153.2 & 35.7 & 2.76 & 4.44 & $-$24.9 & 6.156 & 56.5 \\
+\cmidrule(l){2-9}
+& Gem. 2.5 Flash & 120.7 & 37.9 & 2.26 & 3.49 & $-$36.0 & 3.352 & 57.5 \\
+& Gem. 2.5 Pro & 107.9 & 40.8 & 1.99 & 2.97 & $-$37.3 & 2.893 & 57.3 \\
+\cmidrule(l){2-9}
+& Cl. Sonnet 4 & \textbf{158.2} & 32.4 & \textbf{3.07} & \textbf{5.60} & \textbf{$-$18.5} & \textbf{8.542} & 55.5 \\
+& Cl. Opus 4 & 156.3 & 35.7 & 2.80 & 4.48 & $-$33.9 & 4.615 & \textbf{59.5} \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel B: Sharpe}} \\
+\midrule
+& GPT-4o & $-$53.5 & 32.1 & $-$2.22 & $-$2.75 & $-$91.3 & $-$0.586 & 43.8 \\
+& GPT-4o mini & $-$37.4 & \textbf{23.2} & $-$1.90 & $-$2.53 & $-$77.9 & $-$0.480 & 42.4 \\
+& GPT-4.1 & 114.9 & 34.0 & 2.41 & 3.80 & $-$30.4 & 3.775 & 53.5 \\
+& GPT-4.1 mini & \textbf{168.3} & 32.3 & \textbf{3.20} & \textbf{5.65} & \textbf{$-$17.4} & \textbf{9.695} & 57.4 \\
+& GPT-4.1 nano & 20.5 & 26.7 & 0.83 & 1.13 & $-$25.9 & 0.789 & 54.7 \\
+& o4-mini & 40.8 & 37.5 & 1.10 & 1.55 & $-$42.7 & 0.956 & 52.6 \\
+& o3 & 96.6 & 32.0 & 2.26 & 3.46 & $-$25.9 & 3.727 & 56.2 \\
+\cmidrule(l){2-9}
+& Gem. 2.5 Flash & 8.3 & 41.4 & 0.40 & 0.54 & $-$65.9 & 0.127 & 55.2 \\
+& Gem. 2.5 Pro & 27.0 & 41.6 & 0.79 & 1.03 & $-$63.1 & 0.427 & 53.2 \\
+\cmidrule(l){2-9}
+& Cl. Sonnet 4 & 147.3 & 34.9 & 2.75 & 4.13 & $-$32.6 & 4.516 & \textbf{57.5} \\
+& Cl. Opus 4 & 53.5 & 34.3 & 1.41 & 2.12 & $-$32.0 & 1.670 & 51.7 \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel C: Sortino}} \\
+\midrule
+& GPT-4o & $-$45.4 & 30.3 & $-$1.84 & $-$2.34 & $-$85.5 & $-$0.531 & 44.7 \\
+& GPT-4o mini & $-$43.8 & \textbf{22.7} & $-$2.42 & $-$3.11 & $-$82.4 & $-$0.532 & 40.7 \\
+& GPT-4.1 & 49.7 & 35.2 & 1.31 & 1.95 & $-$49.5 & 1.004 & 50.2 \\
+& GPT-4.1 mini & 95.3 & 30.6 & 2.33 & \textbf{3.95} & \textbf{$-$24.2} & 3.945 & 53.2 \\
+& GPT-4.1 nano & $-$1.2 & 26.3 & 0.09 & 0.12 & $-$34.7 & $-$0.034 & 52.3 \\
+& o4-mini & 50.8 & 37.7 & 1.27 & 1.76 & $-$43.2 & 1.175 & 54.7 \\
+& o3 & 61.6 & 34.7 & 1.55 & 2.18 & $-$32.4 & 1.901 & 54.4 \\
+\cmidrule(l){2-9}
+& Gem. 2.5 Flash & 18.9 & 43.7 & 0.62 & 0.80 & $-$65.0 & 0.291 & 52.7 \\
+& Gem. 2.5 Pro & 50.2 & 38.5 & 1.24 & 1.76 & $-$56.8 & 0.883 & 54.7 \\
+\cmidrule(l){2-9}
+& Cl. Sonnet 4 & 6.9 & 37.4 & 0.37 & 0.47 & $-$62.5 & 0.111 & 54.2 \\
+& Cl. Opus 4 & \textbf{125.8} & 35.9 & \textbf{2.43} & 3.76 & $-$31.9 & \textbf{3.946} & \textbf{55.7} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+% -------------------------------------------------------------
