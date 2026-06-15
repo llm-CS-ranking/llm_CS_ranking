@@ -5,6 +5,6 @@ type: software
 authors:
   - name: "Anonymous Authors"
 year: 2026
-repository-code: "https://github.com/anonymous/llm-cross-sectional-rankers"
+repository-code: "https://github.com/llm-CS-ranking/llm_CS_ranking"
 license: MIT
 

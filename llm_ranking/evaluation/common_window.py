@@ -2,16 +2,29 @@ from __future__ import annotations
 
 import pandas as pd
 
-from llm_ranking.config import BASELINE_CONFIG, COST_BPS, COST_GRID, MODE_LABELS, MODEL_CONFIG, MODES
+from llm_ranking.config import BASELINE_CONFIG, COST_BPS, COST_GRID, MODE_LABELS, MODEL_CONFIG, MODEL_CUTOFFS, MODES
 from llm_ranking.evaluation.portfolio import evaluate_panel
 from llm_ranking.io.market import load_market
-from llm_ranking.io.panels import common_months_for_panels, load_llm_panels, load_pickle_panel, subset_panel
+from llm_ranking.io.panels import common_months_for_panels, first_full_month_after, load_llm_panels, load_pickle_panel, subset_panel
 from llm_ranking.paths import COMMON_WINDOW_DIR, RESULT_DIR
+
+
+def apply_conservative_boundaries(
+    panels: dict[tuple[str, str], pd.DataFrame],
+) -> dict[tuple[str, str], pd.DataFrame]:
+    conservative = {}
+    for (model_id, mode), panel in panels.items():
+        start_month = first_full_month_after(MODEL_CUTOFFS[model_id])
+        filtered = panel.loc[panel.index.astype(str) >= start_month].dropna(axis=0, how="all")
+        if filtered.empty:
+            raise RuntimeError(f"No conservative-window months for {model_id} / {mode}.")
+        conservative[(model_id, mode)] = filtered
+    return conservative
 
 
 def build_common_window_results() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     market, _cid2ticker, _member = load_market()
-    llm_panels = load_llm_panels()
+    llm_panels = apply_conservative_boundaries(load_llm_panels())
     common_months = common_months_for_panels(llm_panels)
 
     metadata = pd.DataFrame(
@@ -20,7 +33,7 @@ def build_common_window_results() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFr
                 "CommonStart": common_months[0],
                 "CommonEnd": common_months[-1],
                 "Months": len(common_months),
-                "Definition": "Intersection of all 11 LLM model-mode rank-panel month indexes.",
+                "Definition": "Intersection of all 11 LLM model-mode rank-panel month indexes after applying model-specific conservative release/update boundaries.",
             }
         ]
     )

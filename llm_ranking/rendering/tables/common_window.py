@@ -9,7 +9,7 @@ from llm_ranking.config import COST_BPS, COST_GRID
 from llm_ranking.rendering.latex import fmt_num, fmt_pct, is_close, write_lines
 
 
-def render_common_window_table(df: pd.DataFrame, path: Path) -> None:
+def render_common_window_table(df: pd.DataFrame, path: Path, window_label: str = "common ranking window") -> None:
     rows = df.loc[df["Panel"].isin(["LLM", "Baseline"])].copy()
     rows = rows.loc[(rows["Mode"] == "return") | (rows["Panel"] == "Baseline")]
     rows["SortKey"] = rows["Panel"].map({"Baseline": 0, "LLM": 1}).fillna(2)
@@ -25,7 +25,7 @@ def render_common_window_table(df: pd.DataFrame, path: Path) -> None:
     lines = [
         "\\begin{table}[H]",
         "\\centering",
-        "\\caption{Common-calendar-window long--short performance. All rankers are restricted to the same common ranking window with a 2-day execution lag and corrected 40 bps one-way costs on both long and short legs. CAGR and IC are reported in percent; bold indicates the best performance value in each column.}",
+        f"\\caption{{Common-calendar-window long--short performance. All rankers are restricted to the same {window_label} with a 2-day execution lag and corrected 40 bps one-way costs on both long and short legs. CAGR, MDD, and IC are reported in percent; bold indicates the best performance value in each column.}}",
         "\\label{tab:common-window}",
         "\\scriptsize",
         "\\setlength{\\tabcolsep}{2.5pt}",
@@ -53,7 +53,12 @@ def render_common_window_table(df: pd.DataFrame, path: Path) -> None:
     write_lines(path, lines)
 
 
-def render_cost_table(df: pd.DataFrame, path: Path, scale_for_appendix: bool = False) -> None:
+def render_cost_table(
+    df: pd.DataFrame,
+    path: Path,
+    scale_for_appendix: bool = False,
+    window_label: str = "common window",
+) -> None:
     ordered = df.loc[df["CostBps"] == COST_BPS].copy()
     ordered["SortKey"] = ordered["Panel"].map({"Baseline": 0, "LLM": 1}).fillna(2)
     ordered = ordered.sort_values(["SortKey", "Vendor", "Order"])
@@ -63,7 +68,7 @@ def render_cost_table(df: pd.DataFrame, path: Path, scale_for_appendix: bool = F
     lines = [
         "\\begin{table}[H]",
         "\\centering",
-        "\\caption{Common-window transaction-cost sensitivity for all expected-return rankers. The long--short portfolio subtracts one-way costs on both long and short turnover; bold indicates the best Sharpe at each cost level.}",
+        f"\\caption{{Common-window transaction-cost sensitivity for all expected-return rankers in the {window_label}. The long--short portfolio subtracts one-way costs on both long and short turnover; bold indicates the best Sharpe at each cost level.}}",
         "\\label{tab:cost-sensitivity}",
     ]
     if scale_for_appendix:

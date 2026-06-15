@@ -7,10 +7,14 @@ from llm_ranking.rendering.figures.factor_heatmaps import (
     render_conservative_ff6_heatmap,
     render_input_ablation_ff6_heatmap,
 )
-from llm_ranking.rendering.figures.performance import render_longshort_heatmap, render_q1_cumulative_returns
+from llm_ranking.rendering.figures.performance import (
+    render_longshort_cumulative_returns,
+    render_longshort_heatmap,
+    render_q1_cumulative_returns,
+)
 
 
-FIGURE_GROUPS = ["fig6", "fig8", "fig9", "fig10", "performance"]
+FIGURE_GROUPS = ["fig4", "fig6", "fig8", "fig9", "fig10", "performance"]
 
 
 def parse_args() -> argparse.Namespace:
@@ -29,6 +33,11 @@ def render_fig6() -> None:
     render_q1_cumulative_returns(all_daily)
 
 
+def render_fig4() -> None:
+    all_daily, _all_metrics = compute_cutoff_daily_metrics()
+    render_longshort_cumulative_returns(all_daily)
+
+
 def render_fig8() -> None:
     _all_daily, all_metrics = compute_cutoff_daily_metrics()
     render_longshort_heatmap(all_metrics)
@@ -36,6 +45,7 @@ def render_fig8() -> None:
 
 def render_performance() -> None:
     all_daily, all_metrics = compute_cutoff_daily_metrics()
+    render_longshort_cumulative_returns(all_daily)
     render_q1_cumulative_returns(all_daily)
     render_longshort_heatmap(all_metrics)
 

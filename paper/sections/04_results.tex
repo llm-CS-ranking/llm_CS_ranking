@@ -82,8 +82,8 @@ This supports the interpretation that recent market summaries, rather than spars
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=0.94\textwidth]{figures/fig4_ls_cumulative_returns.pdf}
-  \caption{Cumulative Q1$-$Q5 wealth by model and prompt objective; the dashed line marks zero spread wealth.}
-  \Description{Line plots of cumulative long-short wealth over time for each model and prompt objective, showing persistent gains for strong models and losses for weak models relative to a zero-spread baseline.}
+  \caption{Cumulative Q1$-$Q5 wealth by model and prompt objective, shown from 2025-05 after compounding each path from its conservative start; the dashed line marks zero spread wealth.}
+  \Description{Line plots of cumulative long-short wealth for each model and prompt objective, displayed from 2025-05 after compounding from each model's conservative start, showing persistent gains for strong models and losses for weak models relative to a zero-spread baseline.}
   \label{fig:ls-cumret-main}
 \end{figure*}
 
@@ -97,7 +97,7 @@ GPT-4.1 mini remains positive after patching malformed months (IC = 0.449), whil
 
 Across the included models, the \textbf{expected-return mode remains the clearest primary benchmark}: it directly targets the holding-period objective and produces the strongest spread for several of the top rankers, while Sharpe/Sortino prompts act more like style-control variants.
 Sharpe/Sortino prompts win for specific models (e.g., GPT-4.1 reaches its best Q1 CAGR of 257.3\% in Sortino mode) but produce more variable results overall, suggesting expected-return prompts remain the clearest primary benchmark.
-Figure~\ref{fig:ls-cumret-main} shows the same pattern in cumulative wealth: Gemini 2.5 Pro/Flash and GPT-4.1 accumulate positive spreads, while GPT-4o and GPT-4o mini lose money.
+Figure~\ref{fig:ls-cumret-main} shows the same pattern in cumulative wealth: the stronger post-2025 rankers, including o3, Gemini 2.5, GPT-4.1-family, and Claude 4 models, accumulate positive spreads, while GPT-4o-family models lose money.
 
 \subsection{Protocol Checks}
 

@@ -53,12 +53,20 @@ def render_table10() -> None:
 
 
 def render_common_window() -> None:
+    metadata = pd.read_csv(COMMON_WINDOW_DIR / "common_window_metadata.csv")
     common_df = pd.read_csv(COMMON_WINDOW_DIR / "common_window_results.csv")
     cost_df = pd.read_csv(COMMON_WINDOW_DIR / "transaction_cost_sensitivity.csv")
-    render_common_window_table(common_df, COMMON_WINDOW_DIR / "common_window_longshort.tex")
-    render_common_window_table(common_df, APPENDIX_TABLE_DIR / "common_window_longshort.tex")
-    render_cost_table(cost_df, COMMON_WINDOW_DIR / "transaction_cost_sensitivity.tex")
-    render_cost_table(cost_df, APPENDIX_TABLE_DIR / "transaction_cost_sensitivity.tex", scale_for_appendix=True)
+    window = metadata.iloc[0]
+    window_label = f"{window['CommonStart']}--{window['CommonEnd']} conservative common ranking window"
+    render_common_window_table(common_df, COMMON_WINDOW_DIR / "common_window_longshort.tex", window_label)
+    render_common_window_table(common_df, APPENDIX_TABLE_DIR / "common_window_longshort.tex", window_label)
+    render_cost_table(cost_df, COMMON_WINDOW_DIR / "transaction_cost_sensitivity.tex", window_label=window_label)
+    render_cost_table(
+        cost_df,
+        APPENDIX_TABLE_DIR / "transaction_cost_sensitivity.tex",
+        scale_for_appendix=True,
+        window_label=window_label,
+    )
 
 
 def render_appendix_metrics() -> None:
